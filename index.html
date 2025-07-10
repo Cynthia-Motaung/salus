@@ -151,6 +151,15 @@
       </div>
     </section>
 
+    <!-- New CTA Section -->
+    <section id="cta-bottom" class="cta-bottom-section">
+      <div class="cta-bottom-container">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss your next big idea and how SALUS can help bring it to life with innovative software solutions.</p>
+        <a href="#contact" class="cta-button">Get a Free Consultation</a>
+      </div>
+    </section>
+
     <section id="contact" class="contact-section">
       <div class="contact-container">
         <h2>Get in Touch</h2>
@@ -160,6 +169,7 @@
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
           <button type="submit" class="contact-submit cta-button">Send Message</button>
+          <div id="form-message" class="form-message"></div> <!-- Message display area -->
         </form>
       </div>
     </section>
@@ -175,7 +185,7 @@
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dots .dot');
-    // Removed references to nextBtn and prevBtn as the buttons are removed from HTML
+    const heroBackground = document.querySelector('.hero-background-animation'); // Get hero background element
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
@@ -189,8 +199,6 @@
       showSlide(currentSlide);
     }
 
-    // Removed prevSlide function as the button is removed
-
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         currentSlide = i;
@@ -198,9 +206,17 @@
       });
     });
 
-    // Removed event listeners for nextBtn and prevBtn
-
     setInterval(nextSlide, 7000); // Slide every 7 seconds
+
+    // Parallax effect for hero background
+    window.addEventListener('scroll', () => {
+      if (heroBackground) {
+        const scrollPosition = window.pageYOffset;
+        // Adjust the multiplier to control the parallax speed
+        heroBackground.style.transform = 'translateY(' + scrollPosition * 0.3 + 'px)';
+      }
+    });
+
 
     // Dynamic Year for Footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -254,46 +270,60 @@
       });
     });
 
-    // Contact Form Validation
+    // Contact Form Validation and Feedback
     const contactForm = document.querySelector('.contact-form');
+    const formMessage = document.getElementById('form-message');
+
     if (contactForm) {
       contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
         const nameInput = contactForm.querySelector('input[name="name"]');
         const emailInput = contactForm.querySelector('input[name="email"]');
         const messageInput = contactForm.querySelector('textarea[name="message"]');
 
         let isValid = true;
+        let messages = [];
 
-        // Simple validation checks
-        if (nameInput && nameInput.value.trim() === '') {
-          nameInput.style.border = '2px solid #ff6b6b'; // Highlight error
+        // Reset borders
+        nameInput.style.border = 'none';
+        emailInput.style.border = 'none';
+        messageInput.style.border = 'none';
+        formMessage.textContent = '';
+        formMessage.classList.remove('success', 'error');
+
+        // Validation checks
+        if (nameInput.value.trim() === '') {
+          nameInput.style.border = '2px solid #ff6b6b';
+          messages.push('Name is required.');
           isValid = false;
-        } else if (nameInput) {
-          nameInput.style.border = 'none'; // Reset if valid
         }
 
-        if (emailInput && (!emailInput.value.includes('@') || !emailInput.value.includes('.'))) {
+        if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
           emailInput.style.border = '2px solid #ff6b6b';
+          messages.push('Please enter a valid email address.');
           isValid = false;
-        } else if (emailInput) {
-          emailInput.style.border = 'none';
         }
 
-        if (messageInput && messageInput.value.trim() === '') {
+        if (messageInput.value.trim() === '') {
           messageInput.style.border = '2px solid #ff6b6b';
+          messages.push('Message cannot be empty.');
           isValid = false;
-        } else if (messageInput) {
-          messageInput.style.border = 'none';
         }
 
         if (!isValid) {
-          event.preventDefault(); // Prevent form submission if validation fails
-          console.log('Please fill in all required fields correctly.');
+          formMessage.textContent = messages.join(' ');
+          formMessage.classList.add('error');
         } else {
-          console.log('Form submitted successfully!');
-          // In a real application, you would send the form data here
-          // For now, we'll just prevent default to show the console log
-          event.preventDefault();
+          formMessage.textContent = 'Thank you! Your message has been sent.';
+          formMessage.classList.add('success');
+          contactForm.reset(); // Clear the form
+          // In a real application, you would send the form data here, e.g., using fetch()
+          console.log('Form data:', {
+            name: nameInput.value,
+            email: emailInput.value,
+            message: messageInput.value
+          });
         }
       });
     }
