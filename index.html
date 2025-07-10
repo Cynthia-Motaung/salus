@@ -57,14 +57,14 @@
       </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section animate-on-scroll">
       <div class="about-container">
         <h2>About SALUS</h2>
         <p>At SALUS, we are a team of passionate software engineers, designers, and strategists dedicated to delivering exceptional digital products. With years of experience across various industries, we pride ourselves on our agile approach, technical excellence, and unwavering commitment to client success. We believe in building long-term partnerships, understanding your unique challenges, and crafting solutions that not only meet but exceed your expectations.</p>
       </div>
     </section>
 
-    <section id="services" class="services-section">
+    <section id="services" class="services-section animate-on-scroll">
       <div class="services-container">
         <h2>Our Solutions</h2>
         <p>We offer a comprehensive suite of services designed to cover every aspect of your software development needs, from initial concept to ongoing support and evolution.</p>
@@ -97,7 +97,7 @@
       </div>
     </section>
 
-    <section id="stack" class="stack-section">
+    <section id="stack" class="stack-section animate-on-scroll">
       <div class="stack-container">
         <h2>Our Technology Stack</h2>
         <p>We work with a diverse range of modern technologies, allowing us to choose the best tools for your specific project requirements and ensure future-proof solutions.</p>
@@ -152,7 +152,7 @@
     </section>
 
     <!-- New CTA Section -->
-    <section id="cta-bottom" class="cta-bottom-section">
+    <section id="cta-bottom" class="cta-bottom-section animate-on-scroll">
       <div class="cta-bottom-container">
         <h2>Ready to Transform Your Business?</h2>
         <p>Let's discuss your next big idea and how SALUS can help bring it to life with innovative software solutions.</p>
@@ -160,7 +160,7 @@
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section animate-on-scroll">
       <div class="contact-container">
         <h2>Get in Touch</h2>
         <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
@@ -269,6 +269,26 @@
         behavior: 'smooth'
       });
     });
+
+    // Scroll-triggered animations
+    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          // Optional: Stop observing once animated to prevent re-triggering
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2 // Trigger when 20% of the element is visible
+    });
+
+    animateOnScrollElements.forEach(element => {
+      observer.observe(element);
+    });
+
 
     // Contact Form Validation and Feedback
     const contactForm = document.querySelector('.contact-form');

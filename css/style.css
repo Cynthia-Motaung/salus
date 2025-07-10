@@ -205,7 +205,23 @@ nav a:hover {
   margin-bottom: 2rem; /* Space between sections */
   border-radius: 10px; /* Slightly rounded corners for sections */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
+
+  /* Initial state for scroll-triggered animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+.about-section.animated,
+.services-section.animated,
+.portfolio-section.animated,
+.contact-section.animated,
+.stack-section.animated,
+.cta-bottom-section.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .about-container, .services-container, .portfolio-container, .contact-container, .stack-container, .cta-bottom-container {
   max-width: 1100px; /* Increased max-width for section containers */
