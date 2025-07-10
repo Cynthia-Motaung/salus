@@ -96,6 +96,33 @@ nav a:hover {
   justify-content: center;
 }
 
+/* Animated background for hero section */
+.hero-background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #a0c4ff, #1E1E2F, #e0eaff);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: 0; /* Ensure it's behind content */
+  opacity: 0.3; /* Subtle opacity */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 .hero-slide {
   position: absolute;
   width: 100%;
@@ -108,6 +135,7 @@ nav a:hover {
   justify-content: center;
   padding: 4rem 2rem;
   text-align: center;
+  z-index: 1; /* Ensure slides are above the animated background */
 }
 
 .hero-slide.active {
@@ -153,6 +181,7 @@ nav a:hover {
   transform: translateX(-50%);
   display: flex;
   gap: 12px; /* Slightly increased gap for dots */
+  z-index: 2; /* Ensure dots are above animated background */
 }
 
 .dot {
@@ -267,6 +296,20 @@ h2:hover::after {
   margin-bottom: 1rem;
   color: #e0eaff;
   font-weight: 600;
+  display: flex; /* Use flex to align icon and text */
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem; /* Space between icon and text */
+}
+
+.service-card h3 i {
+  font-size: 2.2rem; /* Size of the icon */
+  color: #a0c4ff; /* Color of the icon */
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover h3 i {
+  transform: scale(1.1); /* Slight bounce on icon hover */
 }
 
 .service-card p {
@@ -682,6 +725,44 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border top */
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #a0c4ff;
+  color: #1E1E2F;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #c0d9ff; /* Lighter on hover */
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.95); /* Press effect */
+}
+
+
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -779,6 +860,14 @@ footer {
     bottom: 20px;
     gap: 8px;
   }
+
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -815,6 +904,9 @@ footer {
 
   .service-card h3, .portfolio-item h3 {
     font-size: 1.3rem;
+  }
+  .service-card h3 i {
+    font-size: 1.8rem;
   }
 
   .contact-form input,

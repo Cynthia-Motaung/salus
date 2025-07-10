@@ -27,6 +27,7 @@
 
   <main>
     <section id="home" class="hero-slider">
+      <div class="hero-background-animation"></div> <!-- Added for animated background -->
       <div class="hero-slide active">
         <div class="hero-content">
           <h1>Innovative Software Solutions for a Digital Tomorrow</h1>
@@ -38,7 +39,7 @@
         <div class="hero-content">
           <h1>Your Vision, Our Code: Building the Future Together</h1>
           <p>From concept to deployment, we craft bespoke software that drives growth and efficiency.</p>
-          <a href="#portfolio" class="cta-button">View Our Work</a>
+          <a href="portfolio.html" class="cta-button">View Our Work</a>
         </div>
       </div>
       <div class="hero-slide">
@@ -48,8 +49,7 @@
           <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
       </div>
-      <button class="slider-arrow prev">&#10094;</button>
-      <button class="slider-arrow next">&#10095;</button>
+      <!-- Removed slider-arrow buttons -->
       <div class="slider-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -70,27 +70,27 @@
         <p>We offer a comprehensive suite of services designed to cover every aspect of your software development needs, from initial concept to ongoing support and evolution.</p>
         <div class="service-grid">
           <div class="service-card">
-            <h3>Custom Software Development</h3>
+            <h3><i class="devicon-devicon-plain"></i> Custom Software Development</h3>
             <p>Tailored software solutions built from the ground up to perfectly align with your business processes and objectives, ensuring maximum efficiency and scalability.</p>
           </div>
           <div class="service-card">
-            <h3>Web Application Development</h3>
+            <h3><i class="devicon-html5-plain"></i> Web Application Development</h3>
             <p>Building robust, secure, and scalable web applications that deliver exceptional user experiences and powerful functionality across all devices.</p>
           </div>
           <div class="service-card">
-            <h3>Mobile App Development</h3>
+            <h3><i class="devicon-apple-plain"></i> Mobile App Development</h3>
             <p>Crafting intuitive and high-performance native and cross-platform mobile applications for iOS and Android, engaging your users on the go.</p>
           </div>
           <div class="service-card">
-            <h3>Cloud Solutions & DevOps</h3>
+            <h3><i class="devicon-amazonwebservices-plain"></i> Cloud Solutions & DevOps</h3>
             <p>Leveraging the power of cloud platforms (AWS, Azure, GCP) for scalable infrastructure, seamless deployments, and optimized operations through DevOps practices.</p>
           </div>
           <div class="service-card">
-            <h3>UI/UX Design</h3>
+            <h3><i class="devicon-figma-plain"></i> UI/UX Design</h3>
             <p>Creating stunning, user-centric interfaces and seamless experiences that are not only visually appealing but also highly intuitive and effective.</p>
           </div>
           <div class="service-card">
-            <h3>Data Analytics & AI</h3>
+            <h3><i class="devicon-python-plain"></i> Data Analytics & AI</h3>
             <p>Transforming raw data into actionable insights and integrating intelligent AI/ML models to drive smarter decisions and automate complex tasks.</p>
           </div>
         </div>
@@ -165,6 +165,8 @@
     </section>
   </main>
 
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#9650;</button>
+
   <footer>
     <p>&copy; <span id="current-year"></span> SALUS. All rights reserved.</p>
   </footer>
@@ -173,8 +175,7 @@
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dots .dot');
-    const nextBtn = document.querySelector('.slider-arrow.next');
-    const prevBtn = document.querySelector('.slider-arrow.prev');
+    // Removed references to nextBtn and prevBtn as the buttons are removed from HTML
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
@@ -188,10 +189,7 @@
       showSlide(currentSlide);
     }
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
+    // Removed prevSlide function as the button is removed
 
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
@@ -200,15 +198,14 @@
       });
     });
 
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    // Removed event listeners for nextBtn and prevBtn
 
     setInterval(nextSlide, 7000); // Slide every 7 seconds
 
     // Dynamic Year for Footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Active Navigation Link based on scroll position (already present)
+    // Active Navigation Link based on scroll position
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a");
 
@@ -224,10 +221,19 @@
 
       navLinks.forEach((link) => {
         link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
+        // Check if the link href includes the current section ID, but exclude portfolio.html
+        if (link.getAttribute("href").includes(current) && !link.getAttribute("href").includes("portfolio.html")) {
           link.classList.add("active");
         }
       });
+
+      // Show/hide back-to-top button
+      const backToTopButton = document.getElementById('back-to-top');
+      if (window.scrollY > 300) { // Show button after scrolling 300px
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
     });
 
     // Smooth Scrolling for internal links
@@ -237,6 +243,14 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
+      });
+    });
+
+    // Back to top button functionality
+    document.getElementById('back-to-top').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
 
