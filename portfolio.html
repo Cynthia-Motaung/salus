@@ -96,7 +96,6 @@
                   <a href="#" class="project-link">Learn More</a>
                 </div>
               </div>
-              <!-- Removed carousel-arrow buttons -->
               <div class="carousel-dots">
                 <span class="dot active" data-slide-index="0"></span>
                 <span class="dot" data-slide-index="1"></span>
@@ -169,7 +168,6 @@
                   <a href="#" class="project-link">Learn More</a>
                 </div>
               </div>
-              <!-- Removed carousel-arrow buttons -->
               <div class="carousel-dots">
                 <span class="dot active" data-slide-index="0"></span>
                 <span class="dot" data-slide-index="1"></span>
@@ -241,7 +239,6 @@
                   <a href="#" class="project-link">Learn More</a>
                 </div>
               </div>
-              <!-- Removed carousel-arrow buttons -->
               <div class="carousel-dots">
                 <span class="dot active" data-slide-index="0"></span>
                 <span class="dot" data-slide-index="1"></span>
@@ -314,7 +311,6 @@
                   <a href="#" class="project-link">Learn More</a>
                 </div>
               </div>
-              <!-- Removed carousel-arrow buttons -->
               <div class="carousel-dots">
                 <span class="dot active" data-slide-index="0"></span>
                 <span class="dot" data-slide-index="1"></span>
@@ -386,7 +382,6 @@
                   <a href="#" class="project-link">Learn More</a>
                 </div>
               </div>
-              <!-- Removed carousel-arrow buttons -->
               <div class="carousel-dots">
                 <span class="dot active" data-slide-index="0"></span>
                 <span class="dot" data-slide-index="1"></span>
@@ -458,7 +453,6 @@
                   <a href="#" class="project-link">Learn More</a>
                 </div>
               </div>
-              <!-- Removed carousel-arrow buttons -->
               <div class="carousel-dots">
                 <span class="dot active" data-slide-index="0"></span>
                 <span class="dot" data-slide-index="1"></span>
@@ -497,12 +491,21 @@
         }
       });
 
+      // Smooth Scrolling for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
       // Initialize all project carousels
       document.querySelectorAll('.project-carousel').forEach(carouselElement => {
         let currentSlide = 0;
         const slides = carouselElement.querySelectorAll('.carousel-slide');
         const dots = carouselElement.querySelectorAll('.carousel-dots .dot');
-        // Removed references to prevBtn and nextBtn
 
         function showSlide(index) {
           slides.forEach((slide, i) => {
@@ -530,6 +533,51 @@
         // Initial display for each carousel
         showSlide(currentSlide);
       });
+
+      // Contact Form Validation
+      const contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+          const nameInput = contactForm.querySelector('input[name="name"]');
+          const emailInput = contactForm.querySelector('input[name="email"]');
+          const messageInput = contactForm.querySelector('textarea[name="message"]');
+
+          let isValid = true;
+
+          // Simple validation checks
+          if (nameInput && nameInput.value.trim() === '') {
+            nameInput.style.border = '2px solid #ff6b6b'; // Highlight error
+            isValid = false;
+          } else if (nameInput) {
+            nameInput.style.border = 'none'; // Reset if valid
+          }
+
+          if (emailInput && (!emailInput.value.includes('@') || !emailInput.value.includes('.'))) {
+            emailInput.style.border = '2px solid #ff6b6b';
+            isValid = false;
+          } else if (emailInput) {
+            emailInput.style.border = 'none';
+          }
+
+          if (messageInput && messageInput.value.trim() === '') {
+            messageInput.style.border = '2px solid #ff6b6b';
+            isValid = false;
+          } else if (messageInput) {
+            messageInput.style.border = 'none';
+          }
+
+          if (!isValid) {
+            event.preventDefault(); // Prevent form submission if validation fails
+            // You might want to display a user-friendly message here
+            console.log('Please fill in all required fields correctly.');
+          } else {
+            console.log('Form submitted successfully!');
+            // In a real application, you would send the form data here
+            // For now, we'll just prevent default to show the console log
+            event.preventDefault();
+          }
+        });
+      }
     });
   </script>
 </body>
