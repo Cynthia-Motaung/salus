@@ -182,7 +182,7 @@ nav a:hover {
   border: 2px solid #a0c4ff; /* Lighter border color */
   text-decoration: none;
   border-radius: 45px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Added border-color to transition */
   font-weight: 600; /* Bolder text */
 }
 
@@ -190,7 +190,8 @@ nav a:hover {
   background-color: #a0c4ff; /* Lighter background on hover */
   color: #1E1E2F;
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(160, 196, 255, 0.4); /* More pronounced, colored shadow */
+  border-color: #c0d9ff; /* Subtle border color change on hover */
 }
 .cta-button:active {
   transform: translateY(0) scale(0.98); /* Micro-interaction: slight press effect */
@@ -198,7 +199,7 @@ nav a:hover {
 
 
 /* Sections styling */
-.about-section, .services-section, .portfolio-section, .contact-section, .stack-section, .cta-bottom-section {
+.about-section, .services-section, .portfolio-section, .contact-section, .stack-section, .cta-bottom-section, .development-process-section {
   padding: 6rem 2rem; /* More vertical padding for sections */
   background-color: rgba(255, 255, 255, 0.05); /* subtle contrast over gradient */
   color: #e0eaff;
@@ -217,13 +218,14 @@ nav a:hover {
 .portfolio-section.animated,
 .contact-section.animated,
 .stack-section.animated,
-.cta-bottom-section.animated {
+.cta-bottom-section.animated,
+.development-process-section.animated {
   opacity: 1;
   transform: translateY(0);
 }
 
 
-.about-container, .services-container, .portfolio-container, .contact-container, .stack-container, .cta-bottom-container {
+.about-container, .services-container, .portfolio-container, .contact-container, .stack-container, .cta-bottom-container, .development-process-container {
   max-width: 1100px; /* Increased max-width for section containers */
   margin: 0 auto;
   text-align: center;
@@ -243,20 +245,20 @@ h2::after {
   position: absolute;
   left: 50%;
   bottom: -10px;
-  transform: translateX(-50%) scaleX(0); /* Start with scaleX 0 for hover effect */
-  width: 80px;
+  width: 0; /* Start with zero width */
   height: 4px;
   background-color: #a0c4ff; /* Accent color underline */
   border-radius: 2px;
-  transition: transform 0.3s ease-out; /* Smooth transition for underline */
+  transition: width 0.4s ease-out, transform 0.4s ease-out; /* Animate width and transform */
 }
 
 h2:hover::after {
-  transform: translateX(-50%) scaleX(1); /* Expand underline on hover */
+  width: 80px; /* Expand to full width on hover */
+  transform: translateX(-50%); /* Keep centered */
 }
 
 
-.about-container p, .services-container p, .portfolio-item p, .contact-container p, .cta-bottom-section p {
+.about-container p, .services-container p, .portfolio-item p, .contact-container p, .cta-bottom-section p, .development-process-section p {
   font-size: 1.15rem; /* Slightly larger paragraph text */
   line-height: 1.8;
   color: #d0d0e0;
@@ -310,11 +312,11 @@ h2:hover::after {
   margin-bottom: 1.5rem;
 }
 
-/* Muted hover effect */
+/* Muted hover effect with subtle glow */
 .service-card:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 15px rgba(160, 196, 255, 0.6); /* Added glow effect */
 }
 
 /* Portfolio Item specific styling */
@@ -336,7 +338,7 @@ h2:hover::after {
 .portfolio-item:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(160, 196, 255, 0.6); /* Added glow effect */
 }
 
 .project-carousel {
@@ -813,6 +815,158 @@ footer {
     transform: translateX(0);
   }
 }
+
+/* Development Process Section Specific Styles */
+.development-process-section {
+  padding: 6rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e0eaff;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px); /* Initial state for animation */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.development-process-section.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.development-process-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.development-process-section p {
+  margin-bottom: 3rem; /* More space below intro paragraph */
+}
+
+.process-steps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Ensure cards stretch to same height */
+  gap: 3rem 2rem; /* Vertical gap, Horizontal gap */
+  margin-top: 3rem;
+}
+
+.process-step {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex: 1 1 calc(33.33% - 2rem); /* Approx 3 items per row, adjusts for gap */
+  max-width: 350px; /* Max width for each step */
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  min-height: 280px; /* Ensure consistent height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.process-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(160, 196, 255, 0.7); /* Enhanced glow */
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #a0c4ff, #e0eaff);
+  color: #1E1E2F;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover .step-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.process-step h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #e0eaff;
+}
+
+.process-step p {
+  font-size: 1rem;
+  color: #d0d0e0;
+  line-height: 1.6;
+  flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+/* Horizontal connector for larger screens (3 columns) */
+.process-steps-grid .process-step:not(:nth-child(3n)):after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -1.5rem; /* Half of the horizontal gap */
+  width: 1.5rem; /* Length of the line */
+  height: 2px;
+  background-color: #a0c4ff;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* Vertical connector for smaller screens (1 or 2 columns) */
+@media (max-width: 768px) {
+  .process-step {
+    flex: 1 1 calc(50% - 1rem); /* 2 items per row */
+  }
+  /* Horizontal connector for 2-column layout */
+  .process-steps-grid .process-step:not(:nth-child(2n)):after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -1.5rem;
+    width: 1.5rem;
+    height: 2px;
+    background-color: #a0c4ff;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  /* Remove 3-column specific connector */
+  .process-steps-grid .process-step:nth-child(3n):after {
+    content: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-step {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+  /* Remove horizontal connectors for single column */
+  .process-steps-grid .process-step:after {
+    content: none;
+  }
+  /* Add vertical connector for single column */
+  .process-steps-grid .process-step:not(:last-child):before {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem; /* Half of the vertical gap */
+    left: 50%;
+    width: 2px;
+    height: 1.5rem;
+    background-color: #a0c4ff;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}
+
 
 /* === Responsive Design === */
 @media (max-width: 992px) { /* Added a new breakpoint for tablets */
