@@ -241,7 +241,7 @@ h2::after {
   gap: 2.5rem; /* Increased gap */
 }
 
-.service-card, .portfolio-item {
+.service-card {
   background-color: rgba(255, 255, 255, 0.08); /* Slightly more prominent background */
   padding: 2.5rem; /* More padding */
   border-radius: 15px; /* More rounded corners */
@@ -253,14 +253,14 @@ h2::after {
   justify-content: space-between; /* Push content and link apart */
 }
 
-.service-card h3, .portfolio-item h3 {
+.service-card h3 {
   font-size: 1.8rem; /* Larger card headings */
   margin-bottom: 1rem;
   color: #e0eaff;
   font-weight: 600;
 }
 
-.service-card p, .portfolio-item p {
+.service-card p {
   font-size: 1.08rem; /* Slightly larger card paragraph */
   color: #d0d0e0;
   line-height: 1.7;
@@ -269,49 +269,245 @@ h2::after {
 }
 
 /* Muted hover effect */
-.service-card:hover, .portfolio-item:hover {
+.service-card:hover {
   background-color: rgba(255, 255, 255, 0.15); /* More prominent hover background */
   transform: translateY(-8px); /* More pronounced lift */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
 }
 
-/* New styles for portfolio tech tags and links */
+/* Portfolio Item specific styling */
+.portfolio-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 2.5rem;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; /* For carousel arrows/dots positioning */
+  overflow: hidden; /* Hide overflowing slides */
+  min-height: 400px; /* Adjusted minimum height for shorter cards */
+}
+
+.portfolio-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Take full height of the portfolio item */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  min-width: 100%; /* Each slide takes full width */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for slides */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to top within slide */
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem; /* Small internal padding */
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable vertical scrolling for content */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  position: relative; /* Bring active slide into normal flow */
+  transform: translateX(0) !important; /* Override JS transform for active slide */
+}
+
+.project-visual {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.project-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .project-visual img {
+  transform: scale(1.05);
+}
+
+.portfolio-item h3 { /* For the main project title in the first slide */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #e0eaff;
+  font-weight: 600;
+}
+
+.portfolio-item h4 { /* For case study/solution subheadings */
+  font-size: 1.4rem;
+  color: #a0c4ff;
+  margin-top: 1.2rem; /* Adjusted for internal slide spacing */
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.portfolio-item p { /* General paragraph in portfolio item */
+  font-size: 1.05rem; /* Slightly smaller for detailed text */
+  color: #d0d0e0;
+  line-height: 1.7;
+  margin-bottom: 1rem; /* Adjusted for internal slide spacing */
+  text-align: center; /* Center align text within slides */
+}
+
 .project-tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.8rem;
   margin-top: 1rem;
-  margin-bottom: 1.5rem; /* Space before the link */
-  justify-content: center; /* Center the tech tags */
+  margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .tech-tag {
-  background-color: rgba(160, 196, 255, 0.2); /* Light blue background */
-  color: #a0c4ff; /* Matching text color */
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  background-color: rgba(160, 196, 255, 0.25);
+  color: #a0c4ff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
   font-weight: 500;
   white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-tag:hover {
+  background-color: rgba(160, 196, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.client-testimonial {
+  background-color: rgba(160, 196, 255, 0.15);
+  border-left: 5px solid #a0c4ff;
+  padding: 1.2rem 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.client-testimonial p {
+  font-style: italic;
+  font-size: 1rem;
+  color: #d0e0ff;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.client-testimonial .testimonial-author {
+  font-style: normal;
+  font-weight: 600;
+  color: #e0eaff;
+  font-size: 0.95rem;
+  text-align: right;
+  display: block;
 }
 
 .project-link {
   display: inline-block;
-  margin-top: auto; /* Push the link to the bottom */
-  padding: 0.6rem 1.2rem;
+  margin-top: auto;
+  padding: 0.7rem 1.5rem;
   background-color: transparent;
   color: #a0c4ff;
-  border: 1px solid #a0c4ff;
+  border: 2px solid #a0c4ff;
   text-decoration: none;
-  border-radius: 30px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 0.95rem;
-  font-weight: 500;
+  border-radius: 35px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .project-link:hover {
   background-color: #a0c4ff;
   color: #1E1E2F;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel specific controls */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #e0eaff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.prev {
+  left: 10px;
+}
+
+.carousel-arrow.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e0eaff;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 
@@ -629,11 +825,6 @@ footer {
     font-size: 0.9rem;
     padding: 0.6rem 1rem;
     gap: 0.6rem;
-  }
-
-  .stack-item svg {
-    width: 20px;
-    height: 20px;
   }
 
   .stack-item::after {

@@ -33,87 +33,442 @@
     <section id="full-portfolio" class="portfolio-section">
       <div class="portfolio-container">
         <h2>Our Comprehensive Portfolio</h2>
-        <p>Explore a selection of our recent projects, showcasing our expertise in building robust and innovative software solutions across various industries.</p>
+        <p>Explore a selection of our recent projects, showcasing our expertise in building robust and innovative software solutions across various industries. Each case study details the challenges, our approach, and the impactful results delivered to our clients.</p>
 
         <div class="portfolio-grid">
-          <!-- Project 1 -->
+          <!-- Project 1: Project Atlas -->
           <div class="portfolio-item">
-            <h3>Project Atlas: Logistics Platform</h3>
-            <p>A sophisticated B2B web platform designed for comprehensive logistics and real-time inventory management. Features include advanced route optimization, warehouse automation, and predictive analytics.</p>
-            <div class="project-tech-stack">
-              <span class="tech-tag">C#</span>
-              <span class="tech-tag">.NET Core</span>
-              <span class="tech-tag">Angular</span>
-              <span class="tech-tag">SQL Server</span>
-              <span class="tech-tag">Azure</span>
+            <div class="project-carousel" data-project-id="atlas">
+              <div class="carousel-slides">
+                <!-- Slide 1: Project Name & Picture -->
+                <div class="carousel-slide active">
+                  <div class="project-visual">
+                    <img src="https://placehold.co/600x400/1E1E2F/e0eaff?text=Project+Atlas+Visual" alt="Project Atlas Screenshot" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E1E2F/e0eaff?text=Image+Not+Found';" />
+                  </div>
+                  <h3>Project Atlas: Logistics Platform</h3>
+                  <p>Click the dots to learn more about this project.</p>
+                </div>
+
+                <!-- Slide 2: Case Study - The Challenge -->
+                <div class="carousel-slide">
+                  <h4>The Challenge:</h4>
+                  <p>Our client, a rapidly expanding logistics company, faced significant inefficiencies due to a fragmented system for managing inventory, shipments, and supply chain operations. They needed a unified, scalable platform to streamline processes and gain real-time visibility.</p>
+                </div>
+
+                <!-- Slide 3: Our Solution -->
+                <div class="carousel-slide">
+                  <h4>Our Solution:</h4>
+                  <p>We developed a comprehensive B2B web platform with a modular architecture. Key features include automated inventory tracking, intelligent route optimization algorithms, real-time shipment monitoring, and a robust reporting suite. The platform integrates with existing ERP systems for seamless data flow.</p>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="carousel-slide">
+                  <h4>Technologies Used:</h4>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET Core</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">Kubernetes</span>
+                  </div>
+                </div>
+
+                <!-- Slide 5: Impact & Results -->
+                <div class="carousel-slide">
+                  <h4>Impact & Results:</h4>
+                  <p>The new platform led to a <strong>30% reduction in operational costs</strong>, a <strong>25% improvement in delivery times</strong>, and significantly enhanced data accuracy. The client reported increased customer satisfaction and improved decision-making capabilities.</p>
+                </div>
+
+                <!-- Slide 6: Client Feedback -->
+                <div class="carousel-slide">
+                  <h4>Client Feedback:</h4>
+                  <div class="client-testimonial">
+                    <p>"SALUS truly understood our complex needs. Their expertise in logistics software development transformed our operations. The platform is robust, intuitive, and has delivered tangible ROI."</p>
+                    <p class="testimonial-author">- Jane Doe, Operations Director at Global Logistics Inc.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 7: Learn More -->
+                <div class="carousel-slide">
+                  <h4>Ready to learn more?</h4>
+                  <p>Discover how this solution can be tailored to your business needs.</p>
+                  <a href="#" class="project-link">Learn More</a>
+                </div>
+              </div>
+              <!-- Removed carousel-arrow buttons -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+                <span class="dot" data-slide-index="3"></span>
+                <span class="dot" data-slide-index="4"></span>
+                <span class="dot" data-slide-index="5"></span>
+                <span class="dot" data-slide-index="6"></span>
+              </div>
             </div>
-            <a href="#" class="project-link">View Details</a>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 2: Nova App -->
           <div class="portfolio-item">
-            <h3>Nova App: Task Management</h3>
-            <p>A intuitive cross-platform mobile application for personal and team task management. It offers real-time collaboration, customizable workflows, and integration with popular productivity tools.</p>
-            <div class="project-tech-stack">
-              <span class="tech-tag">React Native</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">AWS Lambda</span>
+            <div class="project-carousel" data-project-id="nova">
+              <div class="carousel-slides">
+                <!-- Slide 1: Project Name & Picture -->
+                <div class="carousel-slide active">
+                  <div class="project-visual">
+                    <img src="https://placehold.co/600x400/1E1E2F/e0eaff?text=Nova+App+Visual" alt="Nova App Screenshot" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E1E2F/e0eaff?text=Image+Not+Found';" />
+                  </div>
+                  <h3>Nova App: Task Management Solution</h3>
+                  <p>Click the dots to learn more about this project.</p>
+                </div>
+
+                <!-- Slide 2: Case Study - The Challenge -->
+                <div class="carousel-slide">
+                  <h4>The Challenge:</h4>
+                  <p>A startup needed a cross-platform mobile application that could serve as a central hub for individual and team task management, fostering collaboration and accountability in a remote-first environment.</p>
+                </div>
+
+                <!-- Slide 3: Our Solution -->
+                <div class="carousel-slide">
+                  <h4>Our Solution:</h4>
+                  <p>We engineered the Nova App, a highly responsive mobile application built with React Native for seamless performance on both iOS and Android. It features real-time synchronization, customizable project boards, integrated chat, and smart notifications to keep teams aligned.</p>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="carousel-slide">
+                  <h4>Technologies Used:</h4>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">AWS Lambda</span>
+                    <span class="tech-tag">Socket.IO</span>
+                  </div>
+                </div>
+
+                <!-- Slide 5: Impact & Results -->
+                <div class="carousel-slide">
+                  <h4>Impact & Results:</h4>
+                  <p>The Nova App achieved over <strong>50,000 downloads in its first six months</strong> and received a <strong>4.8-star rating</strong>. Teams reported a <strong>20% increase in project completion rates</strong> and improved communication efficiency.</p>
+                </div>
+
+                <!-- Slide 6: Client Feedback -->
+                <div class="carousel-slide">
+                  <h4>Client Feedback:</h4>
+                  <div class="client-testimonial">
+                    <p>"The Nova App developed by SALUS is a game-changer for our team. It's incredibly user-friendly and has significantly boosted our productivity and collaboration. Highly recommended!"</p>
+                    <p class="testimonial-author">- John Smith, CEO of InnovateNow</p>
+                  </div>
+                </div>
+
+                <!-- Slide 7: Learn More -->
+                <div class="carousel-slide">
+                  <h4>Ready to learn more?</h4>
+                  <p>Discover how this solution can be tailored to your business needs.</p>
+                  <a href="#" class="project-link">Learn More</a>
+                </div>
+              </div>
+              <!-- Removed carousel-arrow buttons -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+                <span class="dot" data-slide-index="3"></span>
+                <span class="dot" data-slide-index="4"></span>
+                <span class="dot" data-slide-index="5"></span>
+                <span class="dot" data-slide-index="6"></span>
+              </div>
             </div>
-            <a href="#" class="project-link">View Details</a>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 3: UI KitX -->
           <div class="portfolio-item">
-            <h3>UI KitX: Component Library</h3>
-            <p>A meticulously crafted, clean, and lightweight UI component library built for rapid development. Designed with a strong emphasis on accessibility, reusability, and optimal performance across all modern browsers.</p>
-            <div class="project-tech-stack">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">CSS Modules</span>
-              <span class="tech-tag">Storybook</span>
+            <div class="project-carousel" data-project-id="uikitx">
+              <div class="carousel-slides">
+                <!-- Slide 1: Project Name & Picture -->
+                <div class="carousel-slide active">
+                  <div class="project-visual">
+                    <img src="https://placehold.co/600x400/1E1E2F/e0eaff?text=UI+KitX+Visual" alt="UI KitX Screenshot" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E1E2F/e0eaff?text=Image+Not+Found';" />
+                  </div>
+                  <h3>UI KitX: Reusable Component Library</h3>
+                  <p>Click the dots to learn more about this project.</p>
+                </div>
+
+                <!-- Slide 2: Case Study - The Challenge -->
+                <div class="carousel-slide">
+                  <h4>The Challenge:</h4>
+                  <p>A large enterprise with multiple product teams struggled with design inconsistency and slow development cycles due to a lack of a standardized, reusable UI component system.</p>
+                </div>
+
+                <!-- Slide 3: Our Solution -->
+                <div class="carousel-slide">
+                  <h4>Our Solution:</h4>
+                  <p>We developed UI KitX, a comprehensive, accessible, and high-performance component library. It provides a unified design language and a set of pre-built, tested UI components, accelerating development and ensuring brand consistency across all digital products.</p>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="carousel-slide">
+                  <h4>Technologies Used:</h4>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Styled Components</span>
+                    <span class="tech-tag">Storybook</span>
+                    <span class="tech-tag">Jest</span>
+                  </div>
+                </div>
+
+                <!-- Slide 5: Impact & Results -->
+                <div class="carousel-slide">
+                  <h4>Impact & Results:</h4>
+                  <p>The implementation of UI KitX resulted in a <strong>40% faster UI development time</strong> and a dramatic improvement in design consistency across the client's product ecosystem, leading to a more cohesive user experience.</p>
+                </div>
+
+                <!-- Slide 6: Client Feedback -->
+                <div class="carousel-slide">
+                  <h4>Client Feedback:</h4>
+                  <div class="client-testimonial">
+                    <p>"UI KitX has transformed our development workflow. SALUS delivered a robust and beautifully crafted library that has become indispensable for our teams."</p>
+                    <p class="testimonial-author">- Sarah Lee, Head of Product Design at GlobalTech</p>
+                  </div>
+                </div>
+
+                <!-- Slide 7: Learn More -->
+                <div class="carousel-slide">
+                  <h4>Ready to learn more?</h4>
+                  <p>Discover how this solution can be tailored to your business needs.</p>
+                  <a href="#" class="project-link">Learn More</a>
+                </div>
+              </div>
+              <!-- Removed carousel-arrow buttons -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+                <span class="dot" data-slide-index="3"></span>
+                <span class="dot" data-slide-index="4"></span>
+                <span class="dot" data-slide-index="5"></span>
+                <span class="dot" data-slide-index="6"></span>
+              </div>
             </div>
-            <a href="#" class="project-link">View Details</a>
           </div>
 
-          <!-- Project 4 -->
+          <!-- Project 4: Insight Dashboard -->
           <div class="portfolio-item">
-            <h3>Insight Dashboard: BI Solution</h3>
-            <p>An interactive data visualization dashboard for business intelligence, transforming complex datasets into actionable insights. Features custom reporting, real-time data feeds, and user-friendly filtering.</p>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Django</span>
-              <span class="tech-tag">D3.js</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Docker</span>
+            <div class="project-carousel" data-project-id="insight">
+              <div class="carousel-slides">
+                <!-- Slide 1: Project Name & Picture -->
+                <div class="carousel-slide active">
+                  <div class="project-visual">
+                    <img src="https://placehold.co/600x400/1E1E2F/e0eaff?text=Insight+Dashboard+Visual" alt="Insight Dashboard Screenshot" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E1E2F/e0eaff?text=Image+Not+Found';" />
+                  </div>
+                  <h3>Insight Dashboard: Business Intelligence</h3>
+                  <p>Click the dots to learn more about this project.</p>
+                </div>
+
+                <!-- Slide 2: Case Study - The Challenge -->
+                <div class="carousel-slide">
+                  <h4>The Challenge:</h4>
+                  <p>Our client needed to consolidate vast amounts of operational data from disparate sources into a single, intuitive dashboard to enable real-time business intelligence and informed decision-making.</p>
+                </div>
+
+                <!-- Slide 3: Our Solution -->
+                <div class="carousel-slide">
+                  <h4>Our Solution:</h4>
+                  <p>We built the Insight Dashboard, a powerful web application that aggregates, processes, and visualizes complex data. It features interactive charts, customizable reports, and predictive analytics capabilities, providing a comprehensive overview of key performance indicators.</p>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="carousel-slide">
+                  <h4>Technologies Used:</h4>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS ECS</span>
+                  </div>
+                </div>
+
+                <!-- Slide 5: Impact & Results -->
+                <div class="carousel-slide">
+                  <h4>Impact & Results:</h4>
+                  <p>The Insight Dashboard empowered the client to identify critical business trends, leading to a <strong>15% increase in operational efficiency</strong> and a significant reduction in time spent on manual data analysis.</p>
+                </div>
+
+                <!-- Slide 6: Client Feedback -->
+                <div class="carousel-slide">
+                  <h4>Client Feedback:</h4>
+                  <div class="client-testimonial">
+                    <p>"The data insights we now get from the dashboard are invaluable. SALUS delivered a solution that is both powerful and incredibly easy to use."</p>
+                    <p class="testimonial-author">- David Chen, Data Analytics Lead at CorpSolutions</p>
+                  </div>
+                </div>
+
+                <!-- Slide 7: Learn More -->
+                <div class="carousel-slide">
+                  <h4>Ready to learn more?</h4>
+                  <p>Discover how this solution can be tailored to your business needs.</p>
+                  <a href="#" class="project-link">Learn More</a>
+                </div>
+              </div>
+              <!-- Removed carousel-arrow buttons -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+                <span class="dot" data-slide-index="3"></span>
+                <span class="dot" data-slide-index="4"></span>
+                <span class="dot" data-slide-index="5"></span>
+                <span class="dot" data-slide-index="6"></span>
+              </div>
             </div>
-            <a href="#" class="project-link">View Details</a>
           </div>
 
-          <!-- Project 5 -->
+          <!-- Project 5: SecureDoc -->
           <div class="portfolio-item">
-            <h3>SecureDoc: Document Management</h3>
-            <p>A secure, cloud-based document management system for enterprises, ensuring data integrity and compliance. Includes features like version control, access permissions, and audit trails.</p>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Spring Boot</span>
-              <span class="tech-tag">AWS S3</span>
-              <span class="tech-tag">MongoDB</span>
+            <div class="project-carousel" data-project-id="securedoc">
+              <div class="carousel-slides">
+                <!-- Slide 1: Project Name & Picture -->
+                <div class="carousel-slide active">
+                  <div class="project-visual">
+                    <img src="https://placehold.co/600x400/1E1E2F/e0eaff?text=SecureDoc+Visual" alt="SecureDoc Screenshot" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E1E2F/e0eaff?text=Image+Not+Found';" />
+                  </div>
+                  <h3>SecureDoc: Enterprise Document Management</h3>
+                  <p>Click the dots to learn more about this project.</p>
+                </div>
+
+                <!-- Slide 2: Case Study - The Challenge -->
+                <div class="carousel-slide">
+                  <h4>The Challenge:</h4>
+                  <p>A financial institution required a highly secure, compliant, and scalable document management system to handle sensitive client data, ensuring version control, audit trails, and robust access management.</p>
+                </div>
+
+                <!-- Slide 3: Our Solution -->
+                <div class="carousel-slide">
+                  <h4>Our Solution:</h4>
+                  <p>We developed SecureDoc, a cloud-native document management system with advanced encryption and access control features. It includes comprehensive versioning, granular permission settings, and a detailed audit log for regulatory compliance.</p>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="carousel-slide">
+                  <h4>Technologies Used:</h4>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">AWS S3</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">OAuth2</span>
+                  </div>
+                </div>
+
+                <!-- Slide 5: Impact & Results -->
+                <div class="carousel-slide">
+                  <h4>Impact & Results:</h4>
+                  <p>SecureDoc significantly improved the client's data security posture and simplified compliance audits, leading to a <strong>20% reduction in audit preparation time</strong> and enhanced data governance.</p>
+                </div>
+
+                <!-- Slide 6: Client Feedback -->
+                <div class="carousel-slide">
+                  <h4>Client Feedback:</h4>
+                  <div class="client-testimonial">
+                    <p>"The security and reliability of SecureDoc are paramount for our business. SALUS delivered a solution that exceeded our expectations in every aspect."</p>
+                    <p class="testimonial-author">- Maria Garcia, Chief Information Security Officer at FinanceCorp</p>
+                  </div>
+                </div>
+
+                <!-- Slide 7: Learn More -->
+                <div class="carousel-slide">
+                  <h4>Ready to learn more?</h4>
+                  <p>Discover how this solution can be tailored to your business needs.</p>
+                  <a href="#" class="project-link">Learn More</a>
+                </div>
+              </div>
+              <!-- Removed carousel-arrow buttons -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+                <span class="dot" data-slide-index="3"></span>
+                <span class="dot" data-slide-index="4"></span>
+                <span class="dot" data-slide-index="5"></span>
+                <span class="dot" data-slide-index="6"></span>
+              </div>
             </div>
-            <a href="#" class="project-link">View Details</a>
           </div>
 
-          <!-- Project 6 -->
+          <!-- Project 6: EduConnect -->
           <div class="portfolio-item">
-            <h3>EduConnect: E-learning Platform</h3>
-            <p>A comprehensive e-learning platform connecting students and educators with interactive courses, live classes, and progress tracking. Designed for a seamless learning experience.</p>
-            <div class="project-tech-stack">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express.js</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Firebase</span>
+            <div class="project-carousel" data-project-id="educonnect">
+              <div class="carousel-slides">
+                <!-- Slide 1: Project Name & Picture -->
+                <div class="carousel-slide active">
+                  <div class="project-visual">
+                    <img src="https://placehold.co/600x400/1E1E2F/e0eaff?text=EduConnect+Visual" alt="EduConnect Screenshot" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E1E2F/e0eaff?text=Image+Not+Found';" />
+                  </div>
+                  <h3>EduConnect: E-learning Platform</h3>
+                  <p>Click the dots to learn more about this project.</p>
+                </div>
+
+                <!-- Slide 2: Case Study - The Challenge -->
+                <div class="carousel-slide">
+                  <h4>The Challenge:</h4>
+                  <p>An educational provider sought to expand its reach by offering an interactive online learning platform that could host courses, facilitate live classes, and track student progress effectively.</p>
+                </div>
+
+                <!-- Slide 3: Our Solution -->
+                <div class="carousel-slide">
+                  <h4>Our Solution:</h4>
+                  <p>We built EduConnect, a dynamic e-learning platform featuring a rich course catalog, integrated video conferencing for live sessions, interactive quizzes, and personalized progress dashboards for students and instructors.</p>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="carousel-slide">
+                  <h4>Technologies Used:</h4>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">WebRTC</span>
+                  </div>
+                </div>
+
+                <!-- Slide 5: Impact & Results -->
+                <div class="carousel-slide">
+                  <h4>Impact & Results:</h4>
+                  <p>EduConnect enabled the client to reach a wider audience, leading to a <strong>50% increase in student enrollment</strong> within the first year and highly positive feedback on the platform's user experience.</p>
+                </div>
+
+                <!-- Slide 6: Client Feedback -->
+                <div class="carousel-slide">
+                  <h4>Client Feedback:</h4>
+                  <div class="client-testimonial">
+                    <p>"SALUS delivered an outstanding e-learning platform. EduConnect is intuitive, reliable, and has significantly enhanced our ability to deliver quality education online."</p>
+                    <p class="testimonial-author">- Dr. Emily White, Founder of Future Minds Academy</p>
+                  </div>
+                </div>
+
+                <!-- Slide 7: Learn More -->
+                <div class="carousel-slide">
+                  <h4>Ready to learn more?</h4>
+                  <p>Discover how this solution can be tailored to your business needs.</p>
+                  <a href="#" class="project-link">Learn More</a>
+                </div>
+              </div>
+              <!-- Removed carousel-arrow buttons -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+                <span class="dot" data-slide-index="3"></span>
+                <span class="dot" data-slide-index="4"></span>
+                <span class="dot" data-slide-index="5"></span>
+                <span class="dot" data-slide-index="6"></span>
+              </div>
             </div>
-            <a href="#" class="project-link">View Details</a>
           </div>
         </div>
         <a href="index.html#home" class="cta-button view-portfolio-button">Back to Home</a>
@@ -136,9 +491,44 @@
 
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === currentPath) {
+        // Check if the link href matches the current page or its base name
+        if (link.getAttribute('href') === currentPath || (link.getAttribute('href').includes('portfolio.html') && currentPath === '')) {
           link.classList.add('active');
         }
+      });
+
+      // Initialize all project carousels
+      document.querySelectorAll('.project-carousel').forEach(carouselElement => {
+        let currentSlide = 0;
+        const slides = carouselElement.querySelectorAll('.carousel-slide');
+        const dots = carouselElement.querySelectorAll('.carousel-dots .dot');
+        // Removed references to prevBtn and nextBtn
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+            if (i === index) {
+              slide.style.transform = 'translateX(0)';
+              slide.style.opacity = '1';
+            } else {
+              slide.style.transform = 'translateX(100%)'; // Move off-screen to the right
+              slide.style.opacity = '0';
+            }
+          });
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+          });
+        }
+
+        dots.forEach((dot, i) => {
+          dot.addEventListener('click', () => {
+            currentSlide = i;
+            showSlide(currentSlide);
+          });
+        });
+
+        // Initial display for each carousel
+        showSlide(currentSlide);
       });
     });
   </script>
