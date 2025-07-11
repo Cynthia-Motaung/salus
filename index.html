@@ -6,6 +6,8 @@
   <title>SALUS</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <!-- Font Awesome for new icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,8 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Solutions</a></li>
-        <li><a href="#development-process">Process</a></li> <!-- Added link to new section -->
+        <li><a href="#development-process">Process</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -28,7 +31,7 @@
 
   <main>
     <section id="home" class="hero-slider">
-      <div class="hero-background-animation"></div> <!-- Added for animated background -->
+      <div class="hero-background-animation"></div>
       <div class="hero-slide active">
         <div class="hero-content">
           <h1>Innovative Software Solutions for a Digital Tomorrow</h1>
@@ -50,7 +53,6 @@
           <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
       </div>
-      <!-- Removed slider-arrow buttons -->
       <div class="slider-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -61,7 +63,27 @@
     <section id="about" class="about-section animate-on-scroll">
       <div class="about-container">
         <h2>About SALUS</h2>
-        <p>At SALUS, we are a team of passionate software engineers, designers, and strategists dedicated to delivering exceptional digital products. With years of experience across various industries, we pride ourselves on our agile approach, technical excellence, and unwavering commitment to client success. We believe in building long-term partnerships, understanding your unique challenges, and crafting solutions that not only meet but exceed your expectations.</p>
+        <p class="about-intro">We are a team of passionate engineers, designers, and strategists dedicated to delivering exceptional digital products and fostering long-term partnerships built on trust and technical excellence.</p>
+        <div class="about-cards-grid">
+          <!-- Mission Card -->
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-rocket"></i></div>
+            <h3>Our Mission</h3>
+            <p>To empower businesses by engineering innovative, reliable, and scalable software solutions that solve complex challenges and drive sustainable growth in a digital-first world.</p>
+          </div>
+          <!-- Vision Card -->
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>To be a leading digital transformation partner, recognized for our commitment to quality, our strategic insights, and our ability to turn our clients' ambitious visions into reality.</p>
+          </div>
+          <!-- Values Card -->
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-gem"></i></div>
+            <h3>Our Values</h3>
+            <p>We operate with integrity, champion collaboration, pursue excellence relentlessly, and put our clients' success at the heart of everything we do. Innovation and partnership are our cornerstones.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -98,7 +120,6 @@
       </div>
     </section>
 
-    <!-- New Development Process Section -->
     <section id="development-process" class="development-process-section animate-on-scroll">
       <div class="development-process-container">
         <h2>Our Development Process</h2>
@@ -134,6 +155,53 @@
             <h3>Support & Evolution</h3>
             <p>Our partnership continues with ongoing maintenance, support, and future enhancements to ensure long-term success.</p>
           </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials-section animate-on-scroll">
+      <div class="testimonials-container">
+        <h2>What Our Clients Say</h2>
+        <p>We pride ourselves on building strong relationships and delivering results. Here’s what our clients have to say about working with us.</p>
+        <div class="testimonial-slider">
+          <div class="testimonial-card active">
+            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=A" alt="Client Avatar" class="testimonial-avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
+            <blockquote>
+              <p>"Working with SALUS was a game-changer for our business. Their team is not only technically proficient but also incredibly dedicated and responsive. They delivered a high-quality product on time and on budget."</p>
+            </blockquote>
+            <cite>
+              <strong>Jane Doe</strong>
+              <br>
+              CEO, AlphaCorp
+            </cite>
+          </div>
+          <div class="testimonial-card">
+            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=B" alt="Client Avatar" class="testimonial-avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
+            <blockquote>
+              <p>"The custom software solution SALUS developed for us has streamlined our operations and saved us countless hours. Their attention to detail and understanding of our needs was exceptional."</p>
+            </blockquote>
+            <cite>
+              <strong>John Smith</strong>
+              <br>
+              COO, Beta Industries
+            </cite>
+          </div>
+          <div class="testimonial-card">
+            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=C" alt="Client Avatar" class="testimonial-avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
+            <blockquote>
+              <p>"From the initial UI/UX designs to the final deployment, the entire process was seamless. The SALUS team is professional, creative, and a pleasure to work with. Highly recommended!"</p>
+            </blockquote>
+            <cite>
+              <strong>Emily White</strong>
+              <br>
+              Marketing Director, Gamma Solutions
+            </cite>
+          </div>
+        </div>
+        <div class="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
       </div>
     </section>
@@ -192,7 +260,6 @@
       </div>
     </section>
 
-    <!-- New CTA Section -->
     <section id="cta-bottom" class="cta-bottom-section animate-on-scroll">
       <div class="cta-bottom-container">
         <h2>Ready to Transform Your Business?</h2>
@@ -210,7 +277,7 @@
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
           <button type="submit" class="contact-submit cta-button">Send Message</button>
-          <div id="form-message" class="form-message"></div> <!-- Message display area -->
+          <div id="form-message" class="form-message"></div>
         </form>
       </div>
     </section>
@@ -223,15 +290,18 @@
   </footer>
 
   <script>
+    // Hero Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dots .dot');
-    const heroBackground = document.querySelector('.hero-background-animation'); // Get hero background element
+    const heroBackground = document.querySelector('.hero-background-animation');
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
-        dots[i].classList.toggle('active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
       });
     }
 
@@ -247,13 +317,43 @@
       });
     });
 
-    setInterval(nextSlide, 7000); // Slide every 7 seconds
+    setInterval(nextSlide, 7000);
+
+    // Testimonial Slider
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const testimonialDots = document.querySelectorAll('.testimonial-dots .dot');
+
+    if (testimonials.length > 0) {
+      function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+          testimonial.classList.toggle('active', i === index);
+        });
+        testimonialDots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+
+      function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      }
+
+      testimonialDots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          currentTestimonial = i;
+          showTestimonial(currentTestimonial);
+        });
+      });
+
+      setInterval(nextTestimonial, 8000);
+    }
+
 
     // Parallax effect for hero background
     window.addEventListener('scroll', () => {
       if (heroBackground) {
         const scrollPosition = window.pageYOffset;
-        // Adjust the multiplier to control the parallax speed
         heroBackground.style.transform = 'translateY(' + scrollPosition * 0.3 + 'px)';
       }
     });
@@ -269,7 +369,7 @@
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150; // Adjusted offset for header
+        const sectionTop = section.offsetTop - 150;
         const sectionHeight = section.offsetHeight;
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
           current = section.getAttribute("id");
@@ -278,15 +378,13 @@
 
       navLinks.forEach((link) => {
         link.classList.remove("active");
-        // Check if the link href includes the current section ID, but exclude portfolio.html
         if (link.getAttribute("href").includes(current) && !link.getAttribute("href").includes("portfolio.html")) {
           link.classList.add("active");
         }
       });
 
-      // Show/hide back-to-top button
       const backToTopButton = document.getElementById('back-to-top');
-      if (window.scrollY > 300) { // Show button after scrolling 300px
+      if (window.scrollY > 300) {
         backToTopButton.classList.add('show');
       } else {
         backToTopButton.classList.remove('show');
@@ -318,12 +416,11 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animated');
-          // Optional: Stop observing once animated to prevent re-triggering
           observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.2 // Trigger when 20% of the element is visible
+      threshold: 0.2
     });
 
     animateOnScrollElements.forEach(element => {
@@ -337,7 +434,7 @@
 
     if (contactForm) {
       contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         const nameInput = contactForm.querySelector('input[name="name"]');
         const emailInput = contactForm.querySelector('input[name="email"]');
@@ -346,14 +443,12 @@
         let isValid = true;
         let messages = [];
 
-        // Reset borders
         nameInput.style.border = 'none';
         emailInput.style.border = 'none';
         messageInput.style.border = 'none';
         formMessage.textContent = '';
         formMessage.classList.remove('success', 'error');
 
-        // Validation checks
         if (nameInput.value.trim() === '') {
           nameInput.style.border = '2px solid #ff6b6b';
           messages.push('Name is required.');
@@ -378,8 +473,7 @@
         } else {
           formMessage.textContent = 'Thank you! Your message has been sent.';
           formMessage.classList.add('success');
-          contactForm.reset(); // Clear the form
-          // In a real application, you would send the form data here, e.g., using fetch()
+          contactForm.reset();
           console.log('Form data:', {
             name: nameInput.value,
             email: emailInput.value,
