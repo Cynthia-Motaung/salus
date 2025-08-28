@@ -11,6 +11,97 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Ensure it's above other content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-content {
+    background-color: rgba(30, 30, 47, 0.98);
+    padding: 2.5rem;
+    border-radius: 15px;
+    max-width: 550px;
+    width: 90%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+    color: #e0eaff;
+    margin-bottom: 2rem;
+  }
+
+  .modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #e0eaff;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .modal-close-button:hover {
+    color: #a0c4ff;
+    transform: rotate(90deg);
+  }
+
+  /* Adjust contact form width within modal */
+  .modal-content .contact-form {
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: 1.5rem;
+    }
+    .modal-content h2 {
+      font-size: 1.8rem;
+    }
+    .modal-close-button {
+      font-size: 1.8rem;
+      top: 10px;
+      right: 10px;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header>
@@ -23,7 +114,7 @@
         <li><a href="#development-process">Process</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="open-contact-modal">Contact</a></li> <!-- Modified link -->
       </ul>
     </nav>
     <button class="mobile-nav-toggle" aria-controls="nav-links" aria-expanded="false">
@@ -53,7 +144,7 @@
         <div class="hero-content">
           <h1>Transforming Challenges into Opportunities with Technology</h1>
           <p>Leverage our expertise in AI, cloud, and data to unlock your business's full potential.</p>
-          <a href="#contact" class="cta-button">Get in Touch</a>
+          <a href="#" class="cta-button open-contact-modal">Get in Touch</a> <!-- Modified link -->
         </div>
       </div>
       <div class="slider-dots">
@@ -268,24 +359,32 @@
       <div class="cta-bottom-container">
         <h2>Ready to Transform Your Business?</h2>
         <p>Let's discuss your next big idea and how SALUS can help bring it to life with innovative software solutions.</p>
-        <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        <a href="#" class="cta-button open-contact-modal">Get a Free Consultation</a> <!-- Modified link -->
       </div>
     </section>
 
-    <section id="contact" class="contact-section animate-on-scroll">
-      <div class="contact-container">
-        <h2>Get in Touch</h2>
-        <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
-        <form class="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-          <button type="submit" class="contact-submit cta-button">Send Message</button>
-          <div id="form-message" class="form-message"></div>
-        </form>
-      </div>
-    </section>
+    <!-- The original contact section is now moved into a modal structure -->
+    <!-- The section below is intentionally left empty as its content is now in the modal -->
+    <section id="contact" style="display: none;"></section>
+
   </main>
+
+  <!-- Contact Modal Structure -->
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-button">&times;</button>
+      <h2>Get in Touch</h2>
+      <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit" class="contact-submit cta-button">Send Message</button>
+        <div id="form-message" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+  <!-- End Contact Modal Structure -->
 
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#9650;</button>
 
@@ -373,7 +472,7 @@
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 150;
         const sectionHeight = section.offsetHeight;
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight && section.id !== 'contact') {
           current = section.getAttribute("id");
         }
       });
@@ -393,13 +492,25 @@
       }
     });
 
-    // Smooth Scrolling for internal links
+    // Smooth Scrolling for internal links - modified to handle modals
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+        if (href === '#') { // Prevent default for empty hash links
+          e.preventDefault();
+          return;
+        }
+
+        const targetElement = document.querySelector(href);
+        if (targetElement && targetElement.offsetParent !== null && targetElement.offsetParent.classList.contains('modal-content')) {
+          // If the link points to an element within a modal, don't scroll
+          e.preventDefault();
+        } else if (targetElement) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
       });
     });
 
@@ -480,6 +591,8 @@
             email: emailInput.value,
             message: messageInput.value
           });
+          // Automatically close modal after successful submission
+          closeModal();
         }
       });
     }
@@ -506,6 +619,61 @@
             }
         });
     });
+
+    // === Modal Functionality ===
+    const contactModal = document.getElementById('contact-modal');
+    const openModalButtons = document.querySelectorAll('.open-contact-modal');
+    const closeModalButton = document.querySelector('.modal-close-button');
+
+    function openModal() {
+      contactModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+
+    function closeModal() {
+      contactModal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+      // Reset form message when closing the modal
+      if (formMessage) {
+        formMessage.textContent = '';
+        formMessage.classList.remove('success', 'error');
+        contactForm.reset(); // Also reset the form fields
+      }
+    }
+
+    openModalButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        openModal();
+        // Close mobile nav if it's open
+        if (mainNav.classList.contains('active')) {
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('active');
+            // Do not reset body overflow here, as it will be handled by openModal
+        }
+      });
+    });
+
+    if (closeModalButton) {
+      closeModalButton.addEventListener('click', closeModal);
+    }
+
+    // Close modal if clicking outside the modal content
+    if (contactModal) {
+      contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+          closeModal();
+        }
+      });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
   </script>
 </body>
 </html>
