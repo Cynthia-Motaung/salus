@@ -94,11 +94,31 @@
     gap: 1rem; /* Spacing between form elements */
   }
 
+  /* Input group for icon and input */
+  .input-group {
+    position: relative;
+    width: 100%;
+  }
+
+  .input-group .icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    pointer-events: none; /* Allows clicks to pass through to input */
+  }
+
+  .input-group textarea.icon-textarea {
+    padding-left: 1rem; /* Adjust for icon */
+  }
+
   .modal-content .contact-form input[type="text"],
   .modal-content .contact-form input[type="email"],
   .modal-content .contact-form textarea {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 2.8rem; /* Left padding for icon */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -107,6 +127,12 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none; /* Remove default outline */
   }
+
+  .modal-content .contact-form textarea {
+    padding-top: 1rem; /* Align text better in textarea with icon */
+    padding-bottom: 1rem;
+  }
+
 
   .modal-content .contact-form input[type="text"]::placeholder,
   .modal-content .contact-form input[type="email"]::placeholder,
@@ -182,6 +208,15 @@
     .modal-content .contact-submit {
       width: 100%; /* Full width on mobile */
       max-width: none;
+    }
+    .modal-content .contact-form input[type="text"],
+    .modal-content .contact-form input[type="email"],
+    .modal-content .contact-form textarea {
+        padding-left: 2.2rem; /* Adjust padding for smaller screens */
+    }
+    .input-group .icon {
+        left: 0.8rem;
+        font-size: 1rem;
     }
   }
 </style>
@@ -460,9 +495,18 @@
       <h2>Get in Touch</h2>
       <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
       <form class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <div class="input-group">
+          <span class="icon"><i class="fas fa-user"></i></span>
+          <input type="text" name="name" placeholder="Your Name *" aria-label="Your Name" aria-required="true" required />
+        </div>
+        <div class="input-group">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <input type="email" name="email" placeholder="Your Email *" aria-label="Your Email" aria-required="true" required />
+        </div>
+        <div class="input-group">
+          <span class="icon"><i class="fas fa-comment"></i></span>
+          <textarea name="message" placeholder="Your Message *" rows="6" class="icon-textarea" aria-label="Your Message" aria-required="true" required></textarea>
+        </div>
         <button type="submit" class="contact-submit cta-button">Send Message</button>
         <div id="form-message" class="form-message"></div>
       </form>
