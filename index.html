@@ -494,7 +494,10 @@
       <button class="modal-close-button">&times;</button>
       <h2>Get in Touch</h2>
       <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
-      <form class="contact-form">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleNetlifySubmit(event);">
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
         <div class="input-group">
           <span class="icon"><i class="fas fa-user"></i></span>
           <input type="text" name="name" placeholder="Your Name *" aria-label="Your Name" aria-required="true" required />
@@ -668,65 +671,88 @@
       observer.observe(element);
     });
 
-    // Contact Form Validation and Feedback
+    // === Netlify Forms Submission Handler ===
     const contactForm = document.querySelector('.contact-form');
     const formMessage = document.getElementById('form-message');
 
+    function encode(data) {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
+
+    // Modified event listener for Netlify Forms
     if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+      // Remove previous submit listener to avoid double handling
+      // We are now using onsubmit attribute directly in HTML form for Netlify
+      // The client-side validation logic will be integrated into the Netlify submission.
+    }
 
-        const nameInput = contactForm.querySelector('input[name="name"]');
-        const emailInput = contactForm.querySelector('input[name="email"]');
-        const messageInput = contactForm.querySelector('textarea[name="message"]');
+    // New function to handle Netlify form submission and client-side validation
+    async function handleNetlifySubmit(event) {
+      event.preventDefault(); // Prevent default form submission
 
-        let isValid = true;
-        let messages = [];
+      const nameInput = contactForm.querySelector('input[name="name"]');
+      const emailInput = contactForm.querySelector('input[name="email"]');
+      const messageInput = contactForm.querySelector('textarea[name="message"]');
 
-        // Reset styling for validation
-        nameInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-        emailInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-        messageInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-        formMessage.textContent = '';
-        formMessage.classList.remove('success', 'error');
+      let isValid = true;
+      let messages = [];
 
-        if (nameInput.value.trim() === '') {
-          nameInput.style.border = '2px solid #ff6b6b';
-          messages.push('Name is required.');
-          isValid = false;
-        }
+      // Reset styling for validation
+      nameInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+      emailInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+      messageInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+      formMessage.textContent = '';
+      formMessage.classList.remove('success', 'error');
 
-        if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
-          emailInput.style.border = '2px solid #ff6b6b';
-          messages.push('Please enter a valid email address.');
-          isValid = false;
-        }
+      if (nameInput.value.trim() === '') {
+        nameInput.style.border = '2px solid #ff6b6b';
+        messages.push('Name is required.');
+        isValid = false;
+      }
 
-        if (messageInput.value.trim() === '') {
-          messageInput.style.border = '2px solid #ff6b6b';
-          messages.push('Message cannot be empty.');
-          isValid = false;
-        }
+      if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+        emailInput.style.border = '2px solid #ff6b6b';
+        messages.push('Please enter a valid email address.');
+        isValid = false;
+      }
 
-        if (!isValid) {
-          formMessage.textContent = messages.join(' ');
-          formMessage.classList.add('error');
-        } else {
+      if (messageInput.value.trim() === '') {
+        messageInput.style.border = '2px solid #ff6b6b';
+        messages.push('Message cannot be empty.');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        formMessage.textContent = messages.join(' ');
+        formMessage.classList.add('error');
+        return false; // Stop submission if validation fails
+      }
+
+      // If validation passes, proceed with Netlify submission
+      const formData = new FormData(contactForm);
+      try {
+          await fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encode(Object.fromEntries(formData)),
+          });
           formMessage.textContent = 'Thank you! Your message has been sent.';
           formMessage.classList.add('success');
           contactForm.reset();
-          console.log('Form data:', {
-            name: nameInput.value,
-            email: emailInput.value,
-            message: messageInput.value
-          });
-          // Automatically close modal after successful submission
-          setTimeout(() => { // Give time for success message to be seen
-            closeModal();
+          console.log('Form data sent successfully to Netlify.');
+          setTimeout(() => {
+              closeModal();
           }, 2000);
-        }
-      });
+      } catch (error) {
+          formMessage.textContent = 'Oops! There was an error sending your message.';
+          formMessage.classList.add('error');
+          console.error('Netlify form submission error:', error);
+      }
+      return false; // Prevent default form submission via browser after fetch
     }
+
 
     // === Mobile Navigation Toggle ===
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
