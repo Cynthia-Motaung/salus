@@ -57,12 +57,16 @@
   .modal-content h2 {
     margin-top: 0;
     font-size: 2.2rem;
+    color: #a0c4ff; /* Highlight heading */
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   .modal-content p {
     font-size: 1rem;
     color: #e0eaff;
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .modal-close-button {
@@ -78,14 +82,90 @@
   }
 
   .modal-close-button:hover {
-    color: #a0c4ff;
+    color: #ff6b6b; /* Red on hover for close */
     transform: rotate(90deg);
   }
 
   /* Adjust contact form width within modal */
   .modal-content .contact-form {
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Spacing between form elements */
   }
+
+  .modal-content .contact-form input[type="text"],
+  .modal-content .contact-form input[type="email"],
+  .modal-content .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #e0eaff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none; /* Remove default outline */
+  }
+
+  .modal-content .contact-form input[type="text"]::placeholder,
+  .modal-content .contact-form input[type="email"]::placeholder,
+  .modal-content .contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .modal-content .contact-form input[type="text"]:focus,
+  .modal-content .contact-form input[type="email"]:focus,
+  .modal-content .contact-form textarea:focus {
+    border-color: #a0c4ff;
+    box-shadow: 0 0 0 3px rgba(160, 196, 255, 0.3);
+  }
+
+  .modal-content .contact-submit {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 35px; /* More rounded */
+    background: linear-gradient(90deg, #a0c4ff, #8ab5f9); /* Gradient button */
+    color: #1E1E2F;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(160, 196, 255, 0.3); /* Soft shadow */
+    align-self: center; /* Center the button */
+    max-width: 250px; /* Limit button width */
+  }
+
+  .modal-content .contact-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(160, 196, 255, 0.4);
+  }
+
+  .modal-content .form-message {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    opacity: 0; /* Hidden by default for animation */
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .modal-content .form-message.success {
+    background-color: rgba(144, 238, 144, 0.2);
+    color: #90ee90;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .modal-content .form-message.error {
+    background-color: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 
   @media (max-width: 480px) {
     .modal-content {
@@ -98,6 +178,10 @@
       font-size: 1.8rem;
       top: 10px;
       right: 10px;
+    }
+    .modal-content .contact-submit {
+      width: 100%; /* Full width on mobile */
+      max-width: none;
     }
   }
 </style>
@@ -271,7 +355,7 @@
             </cite>
           </div>
           <div class="testimonial-card">
-            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=B" alt="Client Avatar" class="testimonial-avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
+            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=B" alt="Client Avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
             <blockquote>
               <p>"The custom software solution SALUS developed for us has streamlined our operations and saved us countless hours. Their attention to detail and understanding of our needs was exceptional."</p>
             </blockquote>
@@ -282,7 +366,7 @@
             </cite>
           </div>
           <div class="testimonial-card">
-            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=C" alt="Client Avatar" class="testimonial-avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
+            <img src="https://placehold.co/80x80/a0c4ff/1E1E2F?text=C" alt="Client Avatar" onerror="this.onerror=null;this.src='https://placehold.co/80x80/e0eaff/333333?text=Error';">
             <blockquote>
               <p>"From the initial UI/UX designs to the final deployment, the entire process was seamless. The SALUS team is professional, creative, and a pleasure to work with. Highly recommended!"</p>
             </blockquote>
@@ -555,9 +639,10 @@
         let isValid = true;
         let messages = [];
 
-        nameInput.style.border = 'none';
-        emailInput.style.border = 'none';
-        messageInput.style.border = 'none';
+        // Reset styling for validation
+        nameInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+        emailInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+        messageInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
         formMessage.textContent = '';
         formMessage.classList.remove('success', 'error');
 
@@ -592,7 +677,9 @@
             message: messageInput.value
           });
           // Automatically close modal after successful submission
-          closeModal();
+          setTimeout(() => { // Give time for success message to be seen
+            closeModal();
+          }, 2000);
         }
       });
     }
@@ -639,6 +726,13 @@
         formMessage.classList.remove('success', 'error');
         contactForm.reset(); // Also reset the form fields
       }
+      // Reset input borders
+      const nameInput = contactForm.querySelector('input[name="name"]');
+      const emailInput = contactForm.querySelector('input[name="email"]');
+      const messageInput = contactForm.querySelector('textarea[name="message"]');
+      nameInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+      emailInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+      messageInput.style.border = '1px solid rgba(255, 255, 255, 0.2)';
     }
 
     openModalButtons.forEach(button => {
