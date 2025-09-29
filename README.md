@@ -61,5 +61,5 @@ Please make sure your code adheres to the existing style.
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-Project Link: [https://github.com/Cynthia-Motaung/salus]
-Live Demo: [https://salus-software.vercel.app/]
+Project Link: https://github.com/Cynthia-Motaung/salus
+Live Demo: https://salus-software.vercel.app/
