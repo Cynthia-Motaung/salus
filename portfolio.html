@@ -1,125 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - SALUS</title>
-    <!-- Link to the main stylesheet for consistent header, footer, and base styles -->
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Link to the dedicated portfolio stylesheet -->
-    <link rel="stylesheet" href="css/portfolio.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/portfolio.css">
+    <link rel="stylesheet" href="/css/style.css"> <!-- Shared styles for dark mode, ripple, etc. -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <!-- Reusing the same header for consistency -->
+<body data-theme="light">
+    <!-- Header (same as index.html, with dark toggle) -->
     <header>
-        <div class="logo">S A L U S</div>
-        <nav>
+        <a href="index.html" class="logo">SALUS<span></span></a>
+        <nav class="nav-container">
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services">Solutions</a></li>
-                <li><a href="index.html#development-process">Process</a></li>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#process">Process</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="#" class="contact-btn open-contact-modal ripple-btn">Contact</a>
+                <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </nav>
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <div class="hamburger"></div>
+        </button>
     </header>
 
-    <main>
-        <section class="portfolio-hero">
-            <div class="portfolio-hero-content">
-                <h1>Our Work</h1>
-                <p>A selection of projects that showcase our passion for technology and commitment to excellence.</p>
-            </div>
-        </section>
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay"></div>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#solutions">Solutions</a></li>
+            <li><a href="index.html#process">Process</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="#" class="open-contact-modal">Contact</a></li>
+        </ul>
+    </nav>
 
-        <section class="portfolio-page-section">
-            <div class="portfolio-grid-container">
-                <!-- Project 1 -->
-                <div class="portfolio-item-page">
-                    <div class="project-visual">
-                        <img src="https://placehold.co/600x400/1E1E2F/a0c4ff?text=Project+Alpha" alt="Project Alpha Visual" onerror="this.onerror=null;this.src='https://placehold.co/600x400/333333/e0eaff?text=Image+Error';">
-                    </div>
-                    <div class="project-details">
-                        <h3>Enterprise Resource Planning (ERP) System</h3>
-                        <p class="project-description">A comprehensive, custom-built ERP system for a major manufacturing client to streamline their supply chain, inventory, and financial operations. The solution increased operational efficiency by 30%.</p>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">.NET Core</span>
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">SQL Server</span>
-                            <span class="tech-tag">Azure</span>
-                        </div>
-                        <a href="#" class="project-link">View Case Study</a>
-                    </div>
+    <!-- Hero Section for Portfolio -->
+    <section class="portfolio-hero">
+        <div class="portfolio-hero-content">
+            <h1>Our Work</h1>
+            <p>A selection of projects that showcase our passion for technology and commitment to excellence.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-page-section">
+        <div class="portfolio-grid-container">
+            <div class="portfolio-item-page animate-on-scroll" data-reveal="true">
+                <div class="project-visual">
+                    <img src="https://via.placeholder.com/600x300?text=ERP+Dashboard" alt="Screenshot of the Enterprise Resource Planning (ERP) System dashboard showing supply chain and inventory management interfaces" loading="lazy">
                 </div>
-                <!-- Project 2 -->
-                <div class="portfolio-item-page">
-                    <div class="project-visual">
-                        <img src="https://placehold.co/600x400/1E1E2F/a0c4ff?text=Project+Beta" alt="Project Beta Visual" onerror="this.onerror=null;this.src='https://placehold.co/600x400/333333/e0eaff?text=Image+Error';">
+                <div class="project-details">
+                    <h3>Enterprise Resource Planning (ERP) System</h3>
+                    <p class="project-description">A comprehensive, custom-built ERP system for a major manufacturing client to streamline their supply chain, inventory, and financial operations. The solution increased operational efficiency by 30%.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-tag interactive-tech" data-tech="dotnet">.NET Core</span>
+                        <span class="tech-tag interactive-tech" data-tech="angular">Angular</span>
+                        <span class="tech-tag interactive-tech" data-tech="sql">SQL Server</span>
+                        <span class="tech-tag interactive-tech" data-tech="azure">Azure</span>
                     </div>
-                    <div class="project-details">
-                        <h3>E-commerce & Analytics Platform</h3>
-                        <p class="project-description">Developed a high-traffic e-commerce platform with an integrated analytics dashboard, providing real-time sales insights and customer behavior tracking. The platform handles over 10,000 transactions per day.</p>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                        <a href="#" class="project-link">View Case Study</a>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="portfolio-item-page">
-                    <div class="project-visual">
-                        <img src="https://placehold.co/600x400/1E1E2F/a0c4ff?text=Project+Gamma" alt="Project Gamma Visual" onerror="this.onerror=null;this.src='https://placehold.co/600x400/333333/e0eaff?text=Image+Error';">
-                    </div>
-                    <div class="project-details">
-                        <h3>Cross-Platform Mobile Banking App</h3>
-                        <p class="project-description">A secure and intuitive mobile banking application for iOS and Android. Features include biometric login, fund transfers, and AI-powered spending analysis to help users manage their finances effectively.</p>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <a href="#" class="project-link">View Case Study</a>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="portfolio-item-page">
-                    <div class="project-visual">
-                        <img src="https://placehold.co/600x400/1E1E2F/a0c4ff?text=Project+Delta" alt="Project Delta Visual" onerror="this.onerror=null;this.src='https://placehold.co/600x400/333333/e0eaff?text=Image+Error';">
-                    </div>
-                    <div class="project-details">
-                        <h3>Healthcare Patient Portal</h3>
-                        <p class="project-description">A HIPAA-compliant web portal for patients to access their medical records, schedule appointments, and communicate securely with healthcare providers, improving patient engagement and administrative efficiency.</p>
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Kubernetes</span>
-                        </div>
-                        <a href="#" class="project-link">View Case Study</a>
-                    </div>
+                    <a href="#" class="project-link ripple-btn">View Case Study</a>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- Reusing the same footer for consistency -->
-    <footer>
-        <p>&copy; <span id="current-year"></span> SALUS. All rights reserved.</p>
+            <div class="portfolio-item-page animate-on-scroll" data-reveal="true">
+                <div class="project-visual">
+                    <img src="https://via.placeholder.com/600x300?text=E-commerce+Platform" alt="Screenshot of the E-commerce and Analytics Platform showing real-time sales dashboard and product listings" loading="lazy">
+                </div>
+                <div class="project-details">
+                    <h3>E-commerce & Analytics Platform</h3>
+                    <p class="project-description">Developed a high-traffic e-commerce platform with an integrated analytics dashboard, providing real-time sales insights and customer behavior tracking. The platform handles over 10,000 transactions per day.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-tag interactive-tech" data-tech="react">React</span>
+                        <span class="tech-tag interactive-tech" data-tech="nodejs">Node.js</span>
+                        <span class="tech-tag interactive-tech" data-tech="postgres">PostgreSQL</span>
+                        <span class="tech-tag interactive-tech" data-tech="aws">AWS</span>
+                    </div>
+                    <a href="#" class="project-link ripple-btn">View Case Study</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item-page animate-on-scroll" data-reveal="true">
+                <div class="project-visual">
+                    <img src="https://via.placeholder.com/600x300?text=Mobile+Banking+App" alt="Screenshot of the Cross-Platform Mobile Banking App interface on a smartphone, featuring biometric login and spending analysis" loading="lazy">
+                </div>
+                <div class="project-details">
+                    <h3>Cross-Platform Mobile Banking App</h3>
+                    <p class="project-description">A secure and intuitive mobile banking application for iOS and Android. Features include biometric login, fund transfers, and AI-powered spending analysis to help users manage their finances effectively.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-tag interactive-tech" data-tech="flutter">Flutter</span>
+                        <span class="tech-tag interactive-tech" data-tech="firebase">Firebase</span>
+                        <span class="tech-tag interactive-tech" data-tech="python">Python</span>
+                        <span class="tech-tag interactive-tech" data-tech="docker">Docker</span>
+                    </div>
+                    <a href="#" class="project-link ripple-btn">View Case Study</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item-page animate-on-scroll" data-reveal="true">
+                <div class="project-visual">
+                    <img src="https://via.placeholder.com/600x300?text=Healthcare+Portal" alt="Screenshot of the HIPAA-compliant Healthcare Patient Portal web interface for medical records and appointment scheduling" loading="lazy">
+                </div>
+                <div class="project-details">
+                    <h3>Healthcare Patient Portal</h3>
+                    <p class="project-description">A HIPAA-compliant web portal for patients to access their medical records, schedule appointments, and communicate securely with healthcare providers, improving patient engagement and administrative efficiency.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-tag interactive-tech" data-tech="java">Java</span>
+                        <span class="tech-tag interactive-tech" data-tech="spring">Spring Boot</span>
+                        <span class="tech-tag interactive-tech" data-tech="vue">Vue.js</span>
+                        <span class="tech-tag interactive-tech" data-tech="k8s">Kubernetes</span>
+                    </div>
+                    <a href="#" class="project-link ripple-btn">View Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Expansion Modal -->
+    <div id="tech-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button ripple-btn" aria-label="Close tech demo">&times;</button>
+            <div id="tech-content"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top ripple-btn" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; SALUS. All rights reserved. <span id="current-year"></span></p>
+        </div>
     </footer>
 
-    <script>
-        // Set the current year in the footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
