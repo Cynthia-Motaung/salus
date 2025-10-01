@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Raleway:wght@300;400;500&family=Viga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body data-theme="light">
@@ -23,7 +22,11 @@
                 <li><a href="#process">Process</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
             </ul>
-           
+            <!--<div class="nav-cta">
+                <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>-->
         </nav>
         <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -40,6 +43,11 @@
             <li><a href="#process">Process</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
         </ul>
+        <div class="mobile-nav-cta">
+            <button id="mobile-dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </nav>
 
     <main>
@@ -261,6 +269,10 @@
             <p>Have a project in mind? Fill out the form below—we'll respond within 24 hours.</p>
             <form name="contact" method="POST" data-netlify="true" class="contact-form multi-step-form" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact" />
+                <p class="bot-field" style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                
                 <div class="step active" data-step="0">
                     <div class="input-group">
                         <i class="fas fa-user icon"></i>
@@ -282,10 +294,11 @@
                         <small class="optional">Optional</small>
                     </div>
                     <div class="step-buttons">
-                        <button type="button" class="prev-step" style="display: none;">Back</button>
+                        <button type="button" class="prev-step" style="visibility: hidden;">Back</button>
                         <button type="button" class="next-step">Next</button>
                     </div>
                 </div>
+                
                 <div class="step" data-step="1">
                     <div class="input-group">
                         <i class="fas fa-comment icon"></i>
@@ -300,16 +313,9 @@
                     </div>
                     <div class="review-summary"></div>
                 </div>
+                
                 <p class="form-message" id="form-message"></p>
-                <div class="alt-contacts">
-                    <p>Or reach us directly:</p>
-                    <ul>
-                        <li><strong>Email:</strong> <a href="mailto:hello@salus.com">hello@salus.com</a></li>
-                        <li><strong>Phone:</strong> <a href="tel:+1234567890">+1-234-567-890</a></li>
-                        <li><strong>Schedule a call:</strong> <a href="#">Book now</a></li>
-                    </ul>
-                </div>
-                <div class="bot-field" style="display: none;">Don't fill this out if you're human:</div>
+                
             </form>
         </div>
     </div>

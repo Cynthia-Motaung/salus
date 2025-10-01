@@ -581,7 +581,7 @@ header.scrolled {
 .cta-button {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #ff8fab, rgba(255,255,255,0.4));
   color: white;
   text-decoration: none;
   border-radius: 50px;
@@ -597,7 +597,7 @@ header.scrolled {
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #5a6fd8, #6a4190);
+  background: linear-gradient(135deg, #fb6f92, rgba(255,255,255,0.4));
 }
 
 .slider-dots {
@@ -725,7 +725,7 @@ header.scrolled {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+ background: linear-gradient(135deg, #ff8fab, rgba(255,255,255,0.4));
 }
 
 .service-card:hover {
@@ -735,7 +735,7 @@ header.scrolled {
 
 .service-card i {
   font-size: 3rem;
-  color: #667eea;
+  color: #ffb3c6;
   margin-bottom: 1.5rem;
   display: block;
 }
@@ -779,7 +779,7 @@ header.scrolled {
 .step-number {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #ff8fab, rgba(255,255,255,0.4));
   color: white;
   border-radius: 50%;
   display: flex;
@@ -881,8 +881,8 @@ header.scrolled {
 
 /* CTA Bottom Section */
 .cta-bottom-section {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--light) 50%, var(--light-gray) 100%);
+  color:  var(--darker-gray);
   text-align: center;
   padding: 6rem 2rem;
   margin: 2rem 0;
@@ -1414,8 +1414,8 @@ header.scrolled {
 
 /* Footer */
 .footer {
-  background: var(--darker-gray);
-  color: white;
+  background: var(--bg-primary);
+  color: var(--darker-gray);
   text-align: center;
   padding: 2rem 0;
   font-size: 0.9rem;
@@ -1635,4 +1635,118 @@ header.scrolled {
   .slider-dots {
     bottom: 2rem;
   }
+}
+
+/* Add to existing mobile-nav styles */
+.mobile-nav-cta {
+    margin-top: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--light-gray);
+}
+
+[data-theme="dark"] .mobile-nav-cta {
+    border-top-color: var(--light-gray);
+}
+
+/* Fix for step buttons visibility */
+.step-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.step-buttons button {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--medium-gray);
+    background: transparent;
+    color: var(--darker-gray);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+.step-buttons .submit-step {
+    background: linear-gradient(135deg, var(--medium-gray), var(--dark-gray));
+    color: white;
+    border: none;
+}
+
+[data-theme="dark"] .step-buttons button {
+    color: var(--text-primary);
+}
+
+.step-buttons button:hover:not(:disabled) {
+    background: var(--medium-gray);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.step-buttons .submit-step:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--dark-gray), var(--darker-gray));
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+}
+
+.step-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Ensure proper step display */
+.multi-step-form .step {
+    display: none;
+}
+
+.multi-step-form .step.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fix input focus states */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group.focused label {
+    color: var(--medium-gray);
+    transform: translateY(-20px) scale(0.85);
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
+    color: var(--medium-gray);
+    transform: translateY(-20px) scale(0.85);
+}
+
+.input-group label {
+    position: absolute;
+    left: 3rem;
+    top: 1rem;
+    color: var(--dark-gray);
+    transition: var(--transition);
+    pointer-events: none;
+    background: var(--card-bg);
+    padding: 0 0.5rem;
+    margin-left: -0.5rem;
+}
+
+[data-theme="dark"] .input-group label {
+    background: var(--card-bg);
+}
+
+.input-group textarea + label {
+    left: 1rem;
 }
