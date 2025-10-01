@@ -1,365 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SALUS | Digital Innovation</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Viga&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALUS - Innovative Software Solutions</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation Overlay -->
-  <div class="nav-overlay"></div>
-  <header>
-    <div class="logo"><span>SALUS</span></div>
-    <!-- Desktop Navigation -->
-    <div class="nav-container">
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Solutions</a></li>
-        <li><a href="#development-process">Process</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-      </ul>
-      
-      <!--<div class="nav-cta">
-        <a href="portfolio.html" class="portfolio-btn">Portfolio</a>
-        <a href="#" class="contact-btn open-contact-modal">Contact</a>
-      </div>-->
-    </div>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">SALUS<span></span></a>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="portfolio.html" class="portfolio-btn">Portfolio</a>
+                <a href="#" class="contact-btn open-contact-modal">Contact</a>
+            </div>
+        </nav>
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <div class="hamburger"></div>
+        </button>
+    </header>
 
-    <!-- Mobile Navigation Toggle -->
-    <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
-      <span class="sr-only">Menu</span>
-      <div class="hamburger"></div>
-    </button>
-  </header>
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay"></div>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="#" class="open-contact-modal">Contact</a></li>
+        </ul>
+    </nav>
 
-  <!-- Mobile Navigation Menu -->
-  <nav class="mobile-nav" id="mobile-nav">
-    <ul class="mobile-nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Solutions</a></li>
-      <li><a href="#development-process">Process</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    </ul>
-    
-    <div class="mobile-nav-cta">
-      <a href="#" class="contact-btn open-contact-modal">Get in Touch</a>
-    </div>
-  </nav>
-
-  <main>
-    <section id="home" class="hero-slider">
-      <div class="hero-background-animation"></div>
-      <div class="hero-slide active">
-        <div class="hero-content">
-          <h1>Innovative Software Solutions for a Digital Tomorrow</h1>
-          <p>Empowering businesses with cutting-edge technology and strategic digital transformation.</p>
-          <a href="#services" class="cta-button">
-            <span>Explore Our Solutions</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h1>Innovative Software Solutions for a Digital Tomorrow</h1>
+                    <p>Empowering businesses with cutting-edge technology and strategic digital transformation.</p>
+                    <a href="#solutions" class="cta-button">Explore Our Solutions</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Your Vision, Our Code: Building the Future Together</h1>
+                    <p>From concept to deployment, we craft bespoke software that drives growth and efficiency.</p>
+                    <a href="portfolio.html" class="cta-button">View Our Work</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Transforming Challenges into Opportunities with Technology</h1>
+                    <p>Leverage our expertise in AI, cloud, and data to unlock your business's full potential.</p>
+                    <a href="#" class="cta-button open-contact-modal">Get in Touch</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="hero-slide">
-        <div class="hero-content">
-          <h1>Your Vision, Our Code: Building the Future Together</h1>
-          <p>From concept to deployment, we craft bespoke software that drives growth and efficiency.</p>
-          <a href="portfolio.html" class="cta-button">
-            <span>View Our Work</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
-      </div>
-      <div class="hero-slide">
-        <div class="hero-content">
-          <h1>Transforming Challenges into Opportunities with Technology</h1>
-          <p>Leverage our expertise in AI, cloud, and data to unlock your business's full potential.</p>
-          <a href="#" class="cta-button open-contact-modal">
-            <span>Get in Touch</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="slider-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
     </section>
 
-    <!-- Rest of your sections remain the same -->
-    <section id="about" class="section-padding animate-on-scroll">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>About SALUS</h2>
-          <p>We are a team of passionate engineers, designers, and strategists dedicated to delivering exceptional digital products and fostering long-term partnerships built on trust and technical excellence.</p>
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>About SALUS</h2>
+                <p>We are a team of passionate engineers, designers, and strategists dedicated to delivering exceptional digital products and fostering long-term partnerships built on trust and technical excellence.</p>
+            </div>
+            <div class="about-grid animate-on-scroll">
+                <div class="mission-card">
+                    <h3>Our Mission</h3>
+                    <p>To empower businesses by engineering innovative, reliable, and scalable software solutions that solve complex challenges and drive sustainable growth in a digital-first world.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Our Vision</h3>
+                    <p>To be a leading digital transformation partner, recognized for our commitment to quality, our strategic insights, and our ability to turn our clients' ambitious visions into reality.</p>
+                </div>
+                <div class="values-card">
+                    <h3>Our Values</h3>
+                    <p>We operate with integrity, champion collaboration, pursue excellence relentlessly, and put our clients' success at the heart of everything we do. Innovation and partnership are our cornerstones.</p>
+                </div>
+            </div>
         </div>
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-rocket"></i></div>
-            <h3>Our Mission</h3>
-            <p>To empower businesses by engineering innovative, reliable, and scalable software solutions that solve complex challenges and drive sustainable growth in a digital-first world.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-eye"></i></div>
-            <h3>Our Vision</h3>
-            <p>To be a leading digital transformation partner, recognized for our commitment to quality, our strategic insights, and our ability to turn our clients' ambitious visions into reality.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-gem"></i></div>
-            <h3>Our Values</h3>
-            <p>We operate with integrity, champion collaboration, pursue excellence relentlessly, and put our clients' success at the heart of everything we do. Innovation and partnership are our cornerstones.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="services" class="section-padding animate-on-scroll">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>Our Solutions</h2>
-          <p>We offer a comprehensive suite of services designed to cover every aspect of your software development needs, from initial concept to ongoing support and evolution.</p>
+    <!-- Solutions Section -->
+    <section id="solutions" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Solutions</h2>
+                <p>We offer a comprehensive suite of services designed to cover every aspect of your software development needs, from initial concept to ongoing support and evolution.</p>
+            </div>
+            <div class="service-grid animate-on-scroll">
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions built from the ground up to perfectly align with your business processes and objectives, ensuring maximum efficiency and scalability.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Web Application Development</h3>
+                    <p>Building robust, secure, and scalable web applications that deliver exceptional user experiences and powerful functionality across all devices.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile App Development</h3>
+                    <p>Crafting intuitive and high-performance native and cross-platform mobile applications for iOS and Android, engaging your users on the go.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>SaaS Development & Consulting</h3>
+                    <p>Designing, developing, and deploying scalable Software as a Service (SaaS) solutions, helping you build subscription-based products that empower your users and grow your business.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Cloud Solutions & DevOps</h3>
+                    <p>Leveraging the power of cloud platforms (AWS, Azure, GCP) for scalable infrastructure, seamless deployments, and optimized operations through DevOps practices.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating stunning, user-centric interfaces and seamless experiences that are not only visually appealing but also highly intuitive and effective.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analytics & AI</h3>
+                    <p>Transforming raw data into actionable insights and integrating intelligent AI/ML models to drive smarter decisions and automate complex tasks.</p>
+                </div>
+            </div>
         </div>
-        <div class="service-grid">
-          <div class="service-card">
-            <h3><i class="devicon-devicon-plain"></i> Custom Software Development</h3>
-            <p>Tailored software solutions built from the ground up to perfectly align with your business processes and objectives, ensuring maximum efficiency and scalability.</p>
-          </div>
-          <div class="service-card">
-            <h3><i class="devicon-html5-plain"></i> Web Application Development</h3>
-            <p>Building robust, secure, and scalable web applications that deliver exceptional user experiences and powerful functionality across all devices.</p>
-          </div>
-          <div class="service-card">
-            <h3><i class="devicon-apple-plain"></i> Mobile App Development</h3>
-            <p>Crafting intuitive and high-performance native and cross-platform mobile applications for iOS and Android, engaging your users on the go.</p>
-          </div>
-          <div class="service-card">
-            <h3><i class="fas fa-cloud"></i> SaaS Development & Consulting</h3>
-            <p>Designing, developing, and deploying scalable Software as a Service (SaaS) solutions, helping you build subscription-based products that empower your users and grow your business.</p>
-          </div>
-          <div class="service-card">
-            <h3><i class="devicon-amazonwebservices-plain"></i> Cloud Solutions & DevOps</h3>
-            <p>Leveraging the power of cloud platforms (AWS, Azure, GCP) for scalable infrastructure, seamless deployments, and optimized operations through DevOps practices.</p>
-          </div>
-          <div class="service-card">
-            <h3><i class="devicon-figma-plain"></i> UI/UX Design</h3>
-            <p>Creating stunning, user-centric interfaces and seamless experiences that are not only visually appealing but also highly intuitive and effective.</p>
-          </div>
-          <div class="service-card">
-            <h3><i class="devicon-python-plain"></i> Data Analytics & AI</h3>
-            <p>Transforming raw data into actionable insights and integrating intelligent AI/ML models to drive smarter decisions and automate complex tasks.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="development-process" class="section-padding animate-on-scroll">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>Our Development Process</h2>
-          <p>We follow a streamlined and agile development methodology to ensure transparency, efficiency, and successful delivery of your project.</p>
+    <!-- Process Section -->
+    <section id="process" class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Development Process</h2>
+                <p>We follow a streamlined and agile development methodology to ensure transparency, efficiency, and successful delivery of your project.</p>
+            </div>
+            <div class="process-steps animate-on-scroll">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Planning</h3>
+                    <p>We start by understanding your vision, goals, and requirements in detail to create a comprehensive project roadmap.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Prototyping</h3>
+                    <p>Our designers craft intuitive UI/UX, creating wireframes and prototypes to visualize the user experience.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Development & Iteration</h3>
+                    <p>Our engineers build the solution in agile sprints, with continuous testing and client feedback integration.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing ensures the software is robust, secure, and performs flawlessly across all environments.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Deployment & Launch</h3>
+                    <p>We handle seamless deployment to your chosen environment, ensuring a smooth and successful launch.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Support & Evolution</h3>
+                    <p>Our partnership continues with ongoing maintenance, support, and future enhancements to ensure long-term success.</p>
+                </div>
+            </div>
         </div>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-icon">1</div>
-            <h3>Discovery & Planning</h3>
-            <p>We start by understanding your vision, goals, and requirements in detail to create a comprehensive project roadmap.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">2</div>
-            <h3>Design & Prototyping</h3>
-            <p>Our designers craft intuitive UI/UX, creating wireframes and prototypes to visualize the user experience.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">3</div>
-            <h3>Development & Iteration</h3>
-            <p>Our engineers build the solution in agile sprints, with continuous testing and client feedback integration.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">4</div>
-            <h3>Quality Assurance</h3>
-            <p>Rigorous testing ensures the software is robust, secure, and performs flawlessly across all environments.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">5</div>
-            <h3>Deployment & Launch</h3>
-            <p>We handle seamless deployment to your chosen environment, ensuring a smooth and successful launch.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">6</div>
-            <h3>Support & Evolution</h3>
-            <p>Our partnership continues with ongoing maintenance, support, and future enhancements to ensure long-term success.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section id="testimonials" class="section-padding animate-on-scroll">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>What Our Clients Say</h2>
-          <p>We pride ourselves on building strong relationships and delivering results. Here's what our clients have to say about working with us.</p>
-        </div>
-        <div class="testimonial-slider">
-          <div class="testimonial-card active">
-            <img src="https://placehold.co/80x80/ced4da/6c757d?text=A" alt="Client Avatar" class="testimonial-avatar">
-            <blockquote>
-              <p>"Working with SALUS was a game-changer for our business. Their team is not only technically proficient but also incredibly dedicated and responsive. They delivered a high-quality product on time and on budget."</p>
-            </blockquote>
-            <cite>
-              <strong>Jane Doe</strong>
-              <br>
-              CEO, AlphaCorp
-            </cite>
-          </div>
-          <div class="testimonial-card">
-            <img src="https://placehold.co/80x80/ced4da/6c757d?text=B" alt="Client Avatar" class="testimonial-avatar">
-            <blockquote>
-              <p>"The custom software solution SALUS developed for us has streamlined our operations and saved us countless hours. Their attention to detail and understanding of our needs was exceptional."</p>
-            </blockquote>
-            <cite>
-              <strong>John Smith</strong>
-              <br>
-              COO, Beta Industries
-            </cite>
-          </div>
-          <div class="testimonial-card">
-            <img src="https://placehold.co/80x80/ced4da/6c757d?text=C" alt="Client Avatar" class="testimonial-avatar">
-            <blockquote>
-              <p>"From the initial UI/UX designs to the final deployment, the entire process was seamless. The SALUS team is professional, creative, and a pleasure to work with. Highly recommended!"</p>
-            </blockquote>
-            <cite>
-              <strong>Emily White</strong>
-              <br>
-              Marketing Director, Gamma Solutions
-            </cite>
-          </div>
-        </div>
-        <div class="testimonial-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
     </section>
 
-    <section id="stack" class="section-padding animate-on-scroll">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>Our Technology Stack</h2>
-          <p>We work with a diverse range of modern technologies, allowing us to choose the best tools for your specific project requirements and ensure future-proof solutions.</p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>What Our Clients Say</h2>
+                <p>We pride ourselves on building strong relationships and delivering results. Here's what our clients have to say about working with us.</p>
+            </div>
+            <div class="testimonial-grid animate-on-scroll">
+                <div class="testimonial-card">
+                    <p>"Working with SALUS was a game-changer for our business. Their team is not only technically proficient but also incredibly dedicated and responsive. They delivered a high-quality product on time and on budget."</p>
+                    <div class="testimonial-author">
+                        <h4>Jane Doe</h4>
+                        <span>CEO, AlphaCorp</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The custom software solution SALUS developed for us has streamlined our operations and saved us countless hours. Their attention to detail and understanding of our needs was exceptional."</p>
+                    <div class="testimonial-author">
+                        <h4>John Smith</h4>
+                        <span>COO, Beta Industries</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"From the initial UI/UX designs to the final deployment, the entire process was seamless. The SALUS team is professional, creative, and a pleasure to work with. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <h4>Emily White</h4>
+                        <span>Marketing Director, Gamma Solutions</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="stack-grid">
-          <div class="stack-item">
-            <i class="devicon-javascript-plain colored"></i> JavaScript
-          </div>
-          <div class="stack-item">
-            <i class="devicon-typescript-plain colored"></i> TypeScript
-          </div>
-          <div class="stack-item">
-            <i class="devicon-react-plain colored"></i> React
-          </div>
-          <div class="stack-item">
-            <i class="devicon-angularjs-plain colored"></i> Angular
-          </div>
-          <div class="stack-item">
-            <i class="devicon-vuejs-plain colored"></i> Vue.js
-          </div>
-          <div class="stack-item">
-            <i class="devicon-nodejs-plain colored"></i> Node.js
-          </div>
-          <div class="stack-item">
-            <i class="devicon-python-plain colored"></i> Python
-          </div>
-          <div class="stack-item">
-            <i class="devicon-csharp-plain colored"></i> C#
-          </div>
-          <div class="stack-item">
-            <i class="devicon-dot-net-plain colored"></i> .NET Core
-          </div>
-          <div class="stack-item">
-            <i class="devicon-java-plain colored"></i> Java
-          </div>
-          <div class="stack-item">
-            <i class="devicon-spring-plain colored"></i> Spring
-          </div>
-          <div class="stack-item">
-            <i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS
-          </div>
-          <div class="stack-item">
-            <i class="devicon-azure-plain colored"></i> Azure
-          </div>
-          <div class="stack-item">
-            <i class="devicon-docker-plain colored"></i> Docker
-          </div>
-          <div class="stack-item">
-            <i class="devicon-kubernetes-plain colored"></i> Kubernetes
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="cta-bottom" class="section-padding animate-on-scroll">
-      <div class="section-container">
-        <div class="cta-bottom-section">
-          <div class="section-header">
+    <!-- Technology Stack Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Technology Stack</h2>
+                <p>We work with a diverse range of modern technologies, allowing us to choose the best tools for your specific project requirements and ensure future-proof solutions.</p>
+            </div>
+            <div class="tech-stack animate-on-scroll">
+                <span class="stack-item">JavaScript</span>
+                <span class="stack-item">TypeScript</span>
+                <span class="stack-item">React</span>
+                <span class="stack-item">Angular</span>
+                <span class="stack-item">Vue.js</span>
+                <span class="stack-item">Node.js</span>
+                <span class="stack-item">Python</span>
+                <span class="stack-item">C#</span>
+                <span class="stack-item">.NET Core</span>
+                <span class="stack-item">Java</span>
+                <span class="stack-item">Spring</span>
+                <span class="stack-item">AWS</span>
+                <span class="stack-item">Azure</span>
+                <span class="stack-item">Docker</span>
+                <span class="stack-item">Kubernetes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-bottom-section animate-on-scroll">
+        <div class="container">
             <h2>Ready to Transform Your Business?</h2>
             <p>Let's discuss your next big idea and how SALUS can help bring it to life with innovative software solutions.</p>
-          </div>
-          <a href="#" class="cta-button open-contact-modal">
-            <span>Get a Free Consultation</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+            <a href="#" class="cta-button open-contact-modal">Get a Free Consultation</a>
         </div>
-      </div>
     </section>
 
-    <section id="contact" style="display: none;"></section>
-  </main>
-
-  <div id="contact-modal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close-button">&times;</button>
-      <h2>Get in Touch</h2>
-      <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <p class="hidden">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-        <div class="input-group">
-          <span class="icon"><i class="fas fa-user"></i></span>
-          <input type="text" name="name" placeholder="Your Name *" aria-label="Your Name" aria-required="true" required />
-        </div>
-        <div class="input-group">
-          <span class="icon"><i class="fas fa-envelope"></i></span>
-          <input type="email" name="email" placeholder="Your Email *" aria-label="Your Email" aria-required="true" required />
-        </div>
-        <div class="input-group">
-          <span class="icon"><i class="fas fa-comment"></i></span>
-          <textarea name="message" placeholder="Your Message *" rows="6" aria-label="Your Message" aria-required="true" required></textarea>
-        </div>
-        <button type="submit" class="modal-submit-button">
-          Send Message
-        </button>
-        <div id="form-message" class="form-message"></div>
-      </form>
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contact-modal">
+      <div class="modal-content">
+        <button class="modal-close-button" aria-label="Close modal">&times;</button>
+        <h2>Get in Touch</h2>
+        <p>Have a project in mind or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <div style="position: absolute; left: -5000px; opacity: 0;">
+            <label for="bot-field">Don't fill this out if you're human:</label>
+            <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+          </div>
+          
+          <div class="input-group">
+            <label for="name">Your Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              placeholder="Enter your full name" 
+              required 
+              aria-describedby="name-error"
+              maxlength="100"
+            >
+            <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
+          </div>
+          
+          <div class="input-group">
+            <label for="email">Your Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Enter your email address" 
+              required 
+              aria-describedby="email-error"
+              maxlength="100"
+            >
+            <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+          </div>
+          
+          <div class="input-group">
+            <label for="message">Your Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              placeholder="Tell us about your project or inquiry (max 1000 characters)" 
+              required 
+              aria-describedby="message-error"
+              maxlength="1000"
+              rows="5"
+            ></textarea>
+            <span id="message-char-count" class="char-count">0/1000</span>
+            <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
+          </div>
+          
+          <button type="submit" class="modal-submit-button">Send Message</button>
+        </form>
+        <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+      </div>
     </div>
-  </div>
 
-  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#9650;</button>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <footer>
-    <p>&copy; <span id="current-year"></span> SALUS. All rights reserved.</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; SALUS. All rights reserved. <span id="current-year"></span></p>
+        </div>
+    </footer>
 
-  <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
